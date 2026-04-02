@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium | High-End Dog Training</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
+    <style>
+        .parallax-section {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-brand">
+                <i data-lucide="dog"></i> Pawsome
+            </a>
+            <nav class="nav-links">
+                <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                            data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a href="home-premium.html">Home
+                            2 (Premium)</a></div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="programs.html">Programs</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html" style="font-weight: 700;">Dashboard</a>
+                <!-- Toggles inside menu for mobile ONLY -->
+                <div class="mobile-show" style="gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
+                    <button id="theme-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="moon"></i> Theme</button>
+                    <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
+                </div>
+                
+                <a href="login.html" class="btn btn-secondary mobile-show" style="margin-top: 1rem;">Login</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="moon"></i></button>
+                <button id="rtl-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="languages"></i></button>
+                <button id="mobile-menu-trigger" style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="login.html" class="btn btn-secondary mobile-hide">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero (Premium) -->
+        <section class="hero-section"
+            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/hero-premium.png') no-repeat center center/cover;">
+            <div class="container" style="text-align: center;">
+                <div class="reveal-zoom" style="max-width: 900px; margin: 0 auto; color: white;">
+                    <span
+                        style="background: var(--primary); padding: 0.5rem 2rem; border-radius: 50px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800; font-size: 0.8rem; color: white; display: inline-block; margin-bottom: 2rem;">Elite
+                        Behavioral Specialists</span>
+                    <h1 style="margin-bottom: 2rem;">The Gold Standard for Your Better Half</h1>
+                    <p style="font-size: 1.25rem; margin-bottom: 4rem; opacity: 0.9;">Unmatched results for selective
+                        owners who expect the very best for their canine companions. High-fidelity training that lasts a
+                        lifetime.</p>
+                    <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="pricing.html" class="btn btn-primary"
+                            style="padding: 1rem 3rem; font-size: 1.1rem; min-width: 200px;">Start the
+                            Transformation</a>
+                        <a href="contact.html" class="btn btn-secondary"
+                            style="padding: 1rem 3rem; font-size: 1.1rem; background: white; color: var(--primary); min-width: 200px;">Talk
+                            to a Specialist</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Problem/Solution (IMAGE) -->
+        <section>
+            <div class="container">
+                <div class="grid-resp-2">
+                    <div class="reveal-left">
+                        <span
+                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">The
+                            Evolution of Behavior</span>
+                        <h2 style="margin: 1.5rem 0 2.5rem;">From Stress to Serenity</h2>
+                        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 2rem;">It's not just about commands;
+                            it's about the emotional state of your dog. We solve reactivity, anxiety, and complex
+                            behavioral issues that other trainers avoid.</p>
+                        <div
+                            style="padding: 2rem; background: var(--card-bg); border-radius: 24px; border-left: 8px solid var(--primary);">
+                            <p style="font-style: italic; opacity: 0.8;">"We treat the root cause, not the symptoms. No
+                                coercion, just genuine behavioral science and trust rebuilding."</p>
+                            <p style="margin-top: 1rem; font-weight: 800;">- Alex Paws, Lead Specialist</p>
+                        </div>
+                    </div>
+                    <div class="reveal-right" style="display: flex; justify-content: center;">
+                        <img src="assets/images/problem-dog.png" alt="Before & After"
+                            style="border-radius: 50px; max-width: 80%; height: auto; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Specialized Programs (IMAGE CARDS) -->
+        <section style="background: var(--card-bg);">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+                    <h2>Our Signature Series</h2>
+                    <p style="opacity: 0.7;">Select the foundational pathway for your dog's journey.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card reveal-left">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.pexels.com/photos/16202421/pexels-photo-16202421.jpeg"
+                                alt="Puppy Prestige">
+                        </div>
+                        <h3>Puppy Prestige</h3>
+                        <p>Start the journey correctly. High-end socialization and basic command mastery in weeks.</p>
+                        <div class="card-cta">Explore Program <i data-lucide="arrow-right"></i></div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.pexels.com/photos/27567722/pexels-photo-27567722.jpeg"
+                                alt="Zen Behavioral">
+                        </div>
+                        <h3>Zen Behavioral</h3>
+                        <p>Calm composure for the reactive dog. Specialized desensitization protocols for city living.
+                        </p>
+                        <div class="card-cta">Explore Program <i data-lucide="arrow-right"></i></div>
+                    </div>
+                    <div class="card reveal-right">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.pexels.com/photos/27132949/pexels-photo-27132949.jpeg"
+                                alt="Master Obedience">
+                        </div>
+                        <h3>Master Obedience</h3>
+                        <p>The elite standard. Total focus and reliability under any distraction, anywhere.</p>
+                        <div class="card-cta">Explore Program <i data-lucide="arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Training Environment (IMAGE BG) -->
+        <section class="parallax-section"
+            style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('assets/images/about-team.png'); padding: clamp(6rem, 15vw, 12rem) 0; color: white; text-align: center;">
+            <div class="container">
+                <div class="reveal-zoom">
+                    <h2 style="color: white; margin-bottom: 2rem;">Real-World Relevance</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.8; max-width: 800px; margin: 0 auto 4rem;">Training in a
+                        sterilized facility doesn't work. We train in the actual streets, parks, and homes where life
+                        happens. Your dog's behavior matters every day, not just on training day.</p>
+                    <a href="services.html" class="btn btn-primary"
+                        style="padding: 1rem 3rem; font-size: 1.1rem; width: fit-content; margin: 0 auto;">See the
+                        Method</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Exclusive Reviews -->
+        <section>
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
+                    <h2>Join the Elite Pack</h2>
+                    <p style="opacity: 0.7;">Trusted by over 500 selective pet parents.</p>
+                </div>
+                <div class="grid-resp-2">
+                    <div class="card reveal-left" style="background: var(--bg); border-color: var(--primary);">
+                        <div style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
+                            <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" alt="Mark S."
+                                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); background: var(--card-bg);">
+                            <div style="flex: 1; min-width: 250px;">
+                                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">"The most professional
+                                    team I've ever dealt with. They don't just train the dog; they coach the family on
+                                    how to communicate with clarity and empathy."</p>
+                                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--primary);">Mark S.,
+                                    Portfolio Manager</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card reveal-right" style="background: var(--bg); border-color: var(--primary);">
+                        <div style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
+                            <img src="https://images.pexels.com/photos/712514/pexels-photo-712514.jpeg" alt="Elena K."
+                                style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); background: var(--card-bg);">
+                            <div style="flex: 1; min-width: 250px;">
+                                <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">"Remarkable shift in
+                                    behavior after only three sessions. Pawsome provides an ROI that you can't measure
+                                    in dollars—the peace of mind is priceless."</p>
+                                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--primary);">Elena K.,
+                                    Veterinary Surgeon</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Premium Contact CTA -->
+        <section style="background: var(--primary); color: white; padding: 8rem 0; text-align: center;">
+            <div class="container">
+                <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
+                    <h2 style="color: white; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem;">Experience the Difference</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3rem;">Reserve your confidential behavioral audit today and start your dog's journey to absolute reliability.</p>
+                    <a href="contact.html" class="btn btn-secondary"
+                        style="background: white; color: var(--primary); padding: 1.25rem 4rem; font-size: 1.25rem; border: none; width: fit-content;">Book My Consultation <i data-lucide="chevron-right"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer same as index -->    <!-- 🦶 FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 5rem;">
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="dog"></i> Pawsome
+                    </a>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
+                        in-home canine training through empathy and modern behavioral science.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Explore</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li>
+                            <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                                        data-lucide="chevron-down"></i></a>
+                                <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a
+                                        href="home-premium.html">Home 2 (Premium)</a></div>
+                            </div>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
+                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
+                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
+                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ⬆️ BACK TO TOP -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+l>

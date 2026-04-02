@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Pawsome Story</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-brand">
+                <i data-lucide="dog"></i> Pawsome
+            </a>
+            <nav class="nav-links">
+                <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                            data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a href="home-premium.html">Home
+                            2 (Premium)</a></div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="programs.html">Programs</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html" style="font-weight: 700;">Dashboard</a>
+                <!-- Toggles inside menu for mobile ONLY -->
+                <div class="mobile-show" style="gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
+                    <button id="theme-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="moon"></i> Theme</button>
+                    <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
+                </div>
+                
+                <a href="login.html" class="btn btn-secondary mobile-show" style="margin-top: 1rem;">Login</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="moon"></i></button>
+                <button id="rtl-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="languages"></i></button>
+                <button id="mobile-menu-trigger" style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="login.html" class="btn btn-secondary mobile-hide">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero (About) -->
+        <section class="reveal-zoom"
+            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg') no-repeat center center/cover; padding: 12rem 0; color: white; text-align: center;">
+            <div class="container">
+                <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2rem;">A Legacy of
+                    Behavioral Excellence</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Crafting the future of
+                    human-canine connection since 2011. Setting the elite standard in mobile dog training.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Mission -->
+        <section>
+            <div class="container">
+                <div class="grid-resp-2">
+                    <div class="reveal-left" style="display: flex; justify-content: center;">
+                        <img src="assets/images/about-values.png" alt="Core Values"
+                            style="border-radius: 24px; box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0 var(--primary); max-width: 70%; height: auto; object-fit: cover;">
+                    </div>
+                    <div class="reveal-right">
+                        <span
+                            style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">Our
+                            Mission</span>
+                        <h2 style="margin: 1.5rem 0 2rem;">Connecting Packs Through Empathy</h2>
+                        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 2.5rem; line-height: 1.8;">Pawsome was
+                            founded on a simple belief: a happy dog is a well-behaved dog. We don't use harsh
+                            corrections or dominance myths; we use the modern science of motivation and reward to build
+                            lifelong cooperation.</p>
+                        <div class="grid-2" style="gap: 2rem;">
+                            <div style="border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+                                <h4 style="margin-bottom: 0.5rem;">Force-Free</h4>
+                                <p style="font-size: 0.9rem; opacity: 0.7;">Ethics first, always.</p>
+                            </div>
+                            <div style="border-left: 4px solid var(--primary); padding-left: 1.5rem;">
+                                <h4 style="margin-bottom: 0.5rem;">Science-Led</h4>
+                                <p style="font-size: 0.9rem; opacity: 0.7;">Evidence-based results.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Pillars of Excellence -->
+        <section style="background: var(--card-bg);">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
+                    <span
+                        style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Our
+                        Foundation</span>
+                    <h2 style="margin-top: 1rem;">The Pawsome Philosophy</h2>
+                    <p style="opacity: 0.7; max-width: 600px; margin: 1rem auto 0;">Rooted in science, executed with
+                        love. Our three pillars of training excellence define every interaction.</p>
+                </div>
+                <div class="grid-3" style="align-items: stretch;">
+                    <div class="card reveal-left" style="text-align: center; padding: 3rem 2rem;">
+                        <div class="card-img-wrapper"
+                            style="width: 120px; height: 80px; margin: 0 auto 2rem; border-radius: 16px; overflow: hidden;">
+                            <img src="https://images.pexels.com/photos/191353/pexels-photo-191353.jpeg" alt="Compassion"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="margin-bottom: 1.5rem;">Compassion</h3>
+                        <p style="opacity: 0.8; line-height: 1.7;">Compassion first in every session, building a bond
+                            beyond simple obedience and creating lasting trust.</p>
+                    </div>
+                    <div class="card reveal" style="text-align: center; padding: 3rem 2rem;">
+                        <div class="card-img-wrapper"
+                            style="width: 120px; height: 80px; margin: 0 auto 2rem; border-radius: 16px; overflow: hidden;">
+                            <img src="https://images.pexels.com/photos/8499441/pexels-photo-8499441.jpeg" alt="Science"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="margin-bottom: 1.5rem;">Science</h3>
+                        <p style="opacity: 0.8; line-height: 1.7;">Science-driven behavioral protocols based on the
+                            latest ethology research for measurable results.</p>
+                    </div>
+                    <div class="card reveal-right" style="text-align: center; padding: 3rem 2rem;">
+                        <div class="card-img-wrapper"
+                            style="width: 120px; height: 80px; margin: 0 auto 2rem; border-radius: 16px; overflow: hidden;">
+                            <img src="https://images.pexels.com/photos/10394140/pexels-photo-10394140.jpeg"
+                                alt="Real-world" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <h3 style="margin-bottom: 1.5rem;">Real-world</h3>
+                        <p style="opacity: 0.8; line-height: 1.7;">Real-world context in shared spaces where your dog
+                            actually lives, plays, and interacts with family.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Team -->
+        <section>
+            <div class="container">
+                <div class="grid-resp-2">
+                    <div class="reveal-left">
+                        <span
+                            style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">The
+                            Core Team</span>
+                        <h2 style="margin: 1.5rem 0 2.5rem;">The Minds Behind Pawsome</h2>
+                        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 3rem; line-height: 1.8;">Our
+                            administrative and training team is a collective of veterinary professionals, behavioral
+                            scientists, and lifelong dog lovers. We collaborate daily to refine our curriculum and
+                            provide the highest level of support.</p>
+                        <div class="grid-2" style="gap: 1.5rem; margin-bottom: 2rem;">
+                            <div class="card" style="padding: 1.5rem; background: var(--card-bg); text-align: center;">
+                                <h4 style="color: var(--primary); font-size: 1.5rem;">15+ Years</h4>
+                                <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 0.5rem;">Collective Expertise
+                                </p>
+                            </div>
+                            <div class="card" style="padding: 1.5rem; background: var(--card-bg); text-align: center;">
+                                <h4 style="color: var(--primary); font-size: 1.5rem;">Elite CPR</h4>
+                                <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 0.5rem;">First Aid Certified</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal-right" style="display: flex; justify-content: center;">
+                        <img src="https://images.pexels.com/photos/8327660/pexels-photo-8327660.jpeg"
+                            alt="Team Collaboration"
+                            style="border-radius: 24px; box-shadow: clamp(-20px, -2vw, -10px) clamp(10px, 2vw, 20px) 0 var(--secondary); max-width: 70%; height: auto; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Timeline/Journey -->
+        <section style="background: var(--bg);">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
+                    <span
+                        style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Milestones</span>
+                    <h2 style="margin-top: 1rem;">The Pawsome Journey</h2>
+                    <p style="opacity: 0.7; margin-top: 1rem;">A decade of growth and dedication to canine welfare.</p>
+                </div>
+                <div class="grid-4" style="text-align: center;">
+                    <div class="reveal-left">
+                        <h1 style="color: var(--primary); font-size: 3rem;">2011</h1>
+                        <p style="font-weight: 800; margin-bottom: 1rem;">Founded</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">Started with a mission to help reactive rescues in
+                            New York City.</p>
+                    </div>
+                    <div class="reveal">
+                        <h1 style="color: var(--primary); font-size: 3rem;">2016</h1>
+                        <p style="font-weight: 800; margin-bottom: 1rem;">Expansion</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">Recognized as the leading mobile training agency in
+                            the tri-state area.</p>
+                    </div>
+                    <div class="reveal">
+                        <h1 style="color: var(--primary); font-size: 3rem;">2021</h1>
+                        <p style="font-weight: 800; margin-bottom: 1rem;">Tech Launch</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">Released the Pawsome Portal for 24/7 digital
+                            homework support.</p>
+                    </div>
+                    <div class="reveal-right">
+                        <h1 style="color: var(--primary); font-size: 3rem;">Today</h1>
+                        <p style="font-weight: 800; margin-bottom: 1rem;">Excellence</p>
+                        <p style="font-size: 0.9rem; opacity: 0.7;">Serving over 500 households annually with elite
+                            behavioral coaching.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 🦶 FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 5rem;">
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="dog"></i> Pawsome
+                    </a>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
+                        in-home canine training through empathy and modern behavioral science.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Explore</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li>
+                            <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                                        data-lucide="chevron-down"></i></a>
+                                <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a
+                                        href="home-premium.html">Home 2 (Premium)</a></div>
+                            </div>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
+                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
+                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
+                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ⬆️ BACK TO TOP -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

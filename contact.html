@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Pawsome Experts</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-brand">
+                <i data-lucide="dog"></i> Pawsome
+            </a>
+            <nav class="nav-links">
+                <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                            data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a href="home-premium.html">Home
+                            2 (Premium)</a></div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="programs.html">Programs</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html" style="font-weight: 700;">Dashboard</a>
+                <!-- Toggles inside menu for mobile ONLY -->
+                <div class="mobile-show" style="gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
+                    <button id="theme-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="moon"></i> Theme</button>
+                    <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
+                </div>
+                
+                <a href="login.html" class="btn btn-secondary mobile-show" style="margin-top: 1rem;">Login</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="moon"></i></button>
+                <button id="rtl-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="languages"></i></button>
+                <button id="mobile-menu-trigger" style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="login.html" class="btn btn-secondary mobile-hide">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section: Hero -->
+        <section class="reveal-zoom"
+            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/1629781/pexels-photo-1629781.jpeg') no-repeat center center/cover; padding: 12rem 0; color: white; text-align: center;">
+            <div class="container">
+                <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2.5rem;">Connect with the experts</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Elite behavioral support is just a message away. Reach out to the team that transforms lives.</p>
+            </div>
+        </section>
+
+        <!-- Section: Contact Columns -->
+        <section style="background: var(--bg);">
+            <div class="container">
+                <div class="grid-resp-2" style="gap: 4rem; align-items: stretch;">
+                    <!-- Left: Contact Details -->
+                    <div class="reveal-left" style="height: 100%;">
+                        <div class="card" style="padding: clamp(2rem, 5vw, 4rem); height: 100%; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center;">
+                            <span style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 1.5rem;">Get In Touch</span>
+                            <h2 style="margin-bottom: 3rem;">We're Here to Help</h2>
+                            
+                            <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+                                <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                    <div style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                                        <i data-lucide="map-pin"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin-bottom: 0.5rem;">Our Home Office</h4>
+                                        <p style="opacity: 0.7;">123 Dog Lane, Manhattan, NY 10001</p>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                    <div style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                                        <i data-lucide="phone"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin-bottom: 0.5rem;">Call Us</h4>
+                                        <p style="opacity: 0.7;">(555) 123-PAWS</p>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                                    <div style="background: var(--bg); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0;">
+                                        <i data-lucide="mail"></i>
+                                    </div>
+                                    <div>
+                                        <h4 style="margin-bottom: 0.5rem;">Email Us</h4>
+                                        <p style="opacity: 0.7;">hello@pawsome.com</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 4rem;">
+                                <h4 style="margin-bottom: 1.5rem;">Follow the Pack</h4>
+                                <div class="social-links" style="gap: 1.25rem;">
+                                    <a href="#"><i data-lucide="instagram"></i></a>
+                                    <a href="#"><i data-lucide="facebook"></i></a>
+                                    <a href="#"><i data-lucide="twitter"></i></a>
+                                    <a href="#"><i data-lucide="linkedin"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="reveal-right">
+                        <div class="card" style="padding: clamp(2rem, 5vw, 4rem); border: 1px solid var(--border); background: var(--card-bg);">
+                            <h3 style="margin-bottom: 2.5rem;">Send a Message</h3>
+                            <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                                <div class="form-group">
+                                    <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Full Name</label>
+                                    <input type="text" placeholder="e.g. John Doe" class="auth-input" style="margin-bottom:0;">
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Email Address</label>
+                                    <input type="email" placeholder="e.g. john@example.com" class="auth-input" style="margin-bottom:0;">
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Subject</label>
+                                    <select class="auth-input" style="margin-bottom:0; width: 100%;">
+                                        <option>Select Case Type</option>
+                                        <option>Behavioral Audit</option>
+                                        <option>Puppy Training</option>
+                                        <option>Boarding Inquiry</option>
+                                        <option>General Question</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label style="display: block; margin-bottom: 0.75rem; font-weight: 600; font-size: 0.9rem;">Message</label>
+                                    <textarea placeholder="Tell us about your dog's journey..." rows="5" class="auth-input" style="margin-bottom:0;"></textarea>
+                                </div>
+                                <button class="btn btn-primary" style="padding: 1.5rem; margin-top: 1rem;">Send My Inquiry</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Google Map -->
+        <section style="padding: 0;">
+            <div style="width: 100%; height: 500px; filter: grayscale(1) contrast(1.2); opacity: 0.8; transition: all 0.5s ease;">
+                <!-- Replace with real embed code per user request -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.1583091352!2d-74.11976373946229!3d40.69766374859258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </section>
+    </main>
+
+    <!-- 🦶 FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 5rem;">
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="dog"></i> Pawsome
+                    </a>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
+                        in-home canine training through empathy and modern behavioral science.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Explore</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li>
+                            <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                                        data-lucide="chevron-down"></i></a>
+                                <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a
+                                        href="home-premium.html">Home 2 (Premium)</a></div>
+                            </div>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
+                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
+                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
+                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ⬆️ BACK TO TOP -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

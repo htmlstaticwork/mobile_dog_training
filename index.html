@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome | Professional In-Home Dog Training</title>
+    <meta name="description" content="Expert dog training in your home. Catchy brand, modern results.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+    <!-- 🧭 HEADER -->
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-brand">
+                <i data-lucide="dog"></i> Pawsome
+            </a>
+            <nav class="nav-links">
+                <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                            data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a href="home-premium.html">Home
+                            2 (Premium)</a></div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="programs.html">Programs</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html" style="font-weight: 700;">Dashboard</a>
+                <!-- Toggles inside menu for mobile ONLY -->
+                <div class="mobile-show" style="gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
+                    <button id="theme-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="moon"></i> Theme</button>
+                    <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
+                </div>
+                
+                <a href="login.html" class="btn btn-secondary mobile-show" style="margin-top: 1rem;">Login</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="moon"></i></button>
+                <button id="rtl-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="languages"></i></button>
+                <button id="mobile-menu-trigger" style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="login.html" class="btn btn-secondary mobile-hide">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero (Classic) -->
+        <section class="hero-section"
+            style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/images/hero-classic.png') no-repeat center center/cover;">
+            <div class="container" style="color: white; text-align: center;">
+                <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
+                    <h1 style="margin-bottom: 2rem;">Transforming Behavior In Your Own Home</h1>
+                    <p style="font-size: 1.25rem; margin-bottom: 3rem; opacity: 0.9;">Professional dog training that
+                        fits your life. We solve problems where they happen, using science-backed positive
+                        reinforcement.</p>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                        <a href="pricing.html" class="btn btn-primary"
+                            style="padding: 1rem 3rem; font-size: 1.1rem; min-width: 200px;">Get Started</a>
+                        <a href="services.html" class="btn btn-secondary"
+                            style="padding: 1rem 3rem; font-size: 1.1rem; backdrop-filter: blur(10px); background: rgba(255,255,255,0.1); min-width: 200px;">Our
+                            Programs</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Features -->
+        <section>
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+                    <h2 style="margin-bottom: 1rem;">Why Choose Pawsome?</h2>
+                    <p style="opacity: 0.7;">The highest standard in modern canine education.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card reveal-left">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.pexels.com/photos/28536059/pexels-photo-28536059.jpeg"
+                                alt="In-Home Comfort">
+                        </div>
+                        <h3>In-Home Comfort</h3>
+                        <p>No stressful travel. We train your dog in the environment they feel most comfortable and
+                            secure.</p>
+                        <div class="card-cta">Learn More <i data-lucide="arrow-right"></i></div>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.pexels.com/photos/19017771/pexels-photo-19017771.jpeg"
+                                alt="Positive Only">
+                        </div>
+                        <h3>Positive Only</h3>
+                        <p>We use force-free, rewards-based methods that build trust and lasting behavioral change.</p>
+                        <div class="card-cta">Our Philosophy <i data-lucide="arrow-right"></i></div>
+                    </div>
+                    <div class="card reveal-right">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.pexels.com/photos/5904050/pexels-photo-5904050.jpeg"
+                                alt="Digital Tracking">
+                        </div>
+                        <h3>Digital Tracking</h3>
+                        <p>Track your dog's progress, view homework, and watch training videos on our exclusive portal.
+                        </p>
+                        <div class="card-cta">Explore App <i data-lucide="arrow-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: How it Works (IMAGE) -->
+        <section style="background: var(--card-bg);">
+            <div class="container">
+                <div class="grid-resp-2">
+                    <div class="reveal-left" style="display: flex; justify-content: center;">
+                        <img src="assets/images/how-it-works.png" alt="Training Process"
+                            style="border-radius: 24px; box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0 var(--primary); max-width: 85%; height: auto; object-fit: cover;">
+                    </div>
+                    <div class="reveal-right">
+                        <h2 style="margin-bottom: 2rem;">A Simple Path to a Better Dog</h2>
+                        <div style="margin-bottom: 2.5rem;">
+                            <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div
+                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+                                    1</div>
+                                <div>
+                                    <h4 style="font-size: 1.2rem;">Initial Assessment</h4>
+                                    <p style="opacity: 0.7;">We visit your home to observe behavior and set realistic,
+                                        achievable goals.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div
+                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+                                    2</div>
+                                <div>
+                                    <h4 style="font-size: 1.2rem;">In-Home Practice</h4>
+                                    <p style="opacity: 0.7;">Weekly sessions focusing on positive communication and
+                                        command reliability.</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
+                                <div
+                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+                                    3</div>
+                                <div>
+                                    <h4 style="font-size: 1.2rem;">Lasting Success</h4>
+                                    <p style="opacity: 0.7;">Ongoing support via our dashboard to ensure behaviors stick
+                                        for a lifetime.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Trainer Intro (IMAGE) -->
+        <section>
+            <div class="container">
+                <div class="grid-resp-2">
+                    <div class="reveal-left">
+                        <span
+                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Meet
+                            Your Expert</span>
+                        <h2 style="margin: 1rem 0 2.5rem;">Expertise You Can Trust</h2>
+                        <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8;">Our lead trainer, Alex Paws,
+                            has over 15 years of experience in behavioral science and canine psychology. We focus on the
+                            bond between human and animal, ensuring an enjoyable experience for everyone.</p>
+                        <ul style="margin-bottom: 3rem;">
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;"><i
+                                    data-lucide="check-circle" style="color: var(--primary);"></i> Certified Behavioral
+                                Specialist</li>
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;"><i
+                                    data-lucide="check-circle" style="color: var(--primary);"></i> CPDT-KA Accredited
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem;"><i data-lucide="check-circle"
+                                    style="color: var(--primary);"></i> 1000+ Satisfied Pack Members</li>
+                        </ul>
+                        <a href="about.html" class="btn btn-primary" style="padding: 1rem 3rem;">Learn More About
+                            Alex</a>
+                    </div>
+                    <div class="reveal-right" style="display: flex; justify-content: center;">
+                        <img src="assets/images/trainer.png" alt="Professional Trainer"
+                            style="border-radius: 24px; border: 10px solid var(--card-bg); outline: 1px solid var(--border); max-width: 85%; height: auto; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Testimonials -->
+        <section style="background: var(--secondary); color: white;">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+                    <h2 style="color: white;">Heartwarming Success Stories</h2>
+                    <p style="opacity: 0.7;">Real families, real results.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="reveal-zoom"
+                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center;">
+                        <img src="https://images.pexels.com/photos/1456642/pexels-photo-1456642.jpeg" alt="The Miller Family"
+                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary); display: block; margin-left: auto; margin-right: auto;">
+                        <div
+                            style="display: flex; gap: 0.25rem; color: var(--primary); margin-bottom: 1.5rem; justify-content: center;">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"Pawsome changed everything
+                            for our rescue dog, Luna. Walks are finally peaceful and she actually listens to commands
+                            without stress!"</p>
+                        <h4 style="color: var(--primary);">The Miller Family</h4>
+                    </div>
+                    <div class="reveal-zoom"
+                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center;">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg" alt="Sarah & Cooper"
+                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary); display: block; margin-left: auto; margin-right: auto;">
+                        <div
+                            style="display: flex; gap: 0.25rem; color: var(--primary); margin-bottom: 1.5rem; justify-content: center;">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"The in-home aspect was key.
+                            Dealing with behavior issues in our actual living room made the solutions click instantly
+                            for us."</p>
+                        <h4 style="color: var(--primary);">Sarah & Cooper</h4>
+                    </div>
+                    <div class="reveal-zoom"
+                        style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center;">
+                        <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg" alt="Dr. Robert Chen"
+                            style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 2px solid var(--primary); display: block; margin-left: auto; margin-right: auto;">
+                        <div
+                            style="display: flex; gap: 0.25rem; color: var(--primary); margin-bottom: 1.5rem; justify-content: center;">
+                            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i
+                                data-lucide="star"></i><i data-lucide="star"></i>
+                        </div>
+                        <p style="font-style: italic; opacity: 0.9; margin-bottom: 2.5rem;">"Highly professional and
+                            clearly loves what they do. The Pawsome trainer was patient, calm, and incredibly
+                            effective."</p>
+                        <h4 style="color: var(--primary);">Dr. Robert Chen</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Banner (IMAGE BG) -->
+        <section
+            style="padding: 10rem 0; background: linear-gradient(rgba(217, 119, 6, 0.9), rgba(217, 119, 6, 0.9)), url('assets/images/service-obedience.png') no-repeat center center/cover; position: relative;">
+            <div class="container" style="text-align: center; color: white;">
+                <div class="reveal-zoom">
+                    <h2 style="color: white; margin-bottom: 2rem; font-size: clamp(2rem, 8vw, 4rem);">Ready for a
+                        Happier, Calmer Dog?</h2>
+                    <p
+                        style="font-size: 1.25rem; margin-bottom: 4rem; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto;">
+                        Book your initial in-home behavioral audit today and join the Pawsome family.</p>
+                    <a href="pricing.html" class="btn btn-secondary"
+                        style="padding: 1rem 3rem; font-size: 1.25rem; background: white; color: var(--primary); width: fit-content; margin: 0 auto;">Reserve
+                        Your Session</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 🗓️ POPUP -->
+    <div id="booking-popup" class="popup-overlay">
+        <div class="popup-card">
+            <button class="close-popup"
+                style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; cursor: pointer; color: #64748b;"><i
+                    data-lucide="x"></i></button>
+            <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Book Your Session</h3>
+            <p style="opacity: 0.7; margin-bottom: 2rem;">Enter your details and our lead trainer will contact you for a
+                schedule.</p>
+            <form style="display: flex; flex-direction: column; gap: 1rem;">
+                <input type="text" placeholder="Your Name" class="auth-input" style="margin:0;">
+                <input type="email" placeholder="Email Address" class="auth-input" style="margin:0;">
+                <button class="btn btn-primary" style="width: 100%;">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- 🦶 FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 5rem;">
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="dog"></i> Pawsome
+                    </a>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
+                        in-home canine training through empathy and modern behavioral science.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Explore</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li>
+                            <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                                        data-lucide="chevron-down"></i></a>
+                                <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a
+                                        href="home-premium.html">Home 2 (Premium)</a></div>
+                            </div>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
+                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
+                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
+                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ⬆️ BACK TO TOP -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

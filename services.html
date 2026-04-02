@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Elite Training Spectrum</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <a href="index.html" class="logo-brand">
+                <i data-lucide="dog"></i> Pawsome
+            </a>
+            <nav class="nav-links">
+                <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                            data-lucide="chevron-down"></i></a>
+                    <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a href="home-premium.html">Home
+                            2 (Premium)</a></div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="programs.html">Programs</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+                <a href="dashboard.html" style="font-weight: 700;">Dashboard</a>
+                <!-- Toggles inside menu for mobile ONLY -->
+                <div class="mobile-show" style="gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
+                    <button id="theme-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="moon"></i> Theme</button>
+                    <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
+                </div>
+                
+                <a href="login.html" class="btn btn-secondary mobile-show" style="margin-top: 1rem;">Login</a>
+            </nav>
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="moon"></i></button>
+                <button id="rtl-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
+                        data-lucide="languages"></i></button>
+                <button id="mobile-menu-trigger" style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
+                    <i data-lucide="menu"></i>
+                </button>
+                <a href="login.html" class="btn btn-secondary mobile-hide">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero (Services) -->
+        <section class="reveal-zoom"
+            style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.pexels.com/photos/1741205/pexels-photo-1741205.jpeg') no-repeat center center/cover; padding: 12rem 0; color: white; text-align: center;">
+            <div class="container">
+                <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2rem;">Elite Training
+                    Programs</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Tailored behavioral
+                    science for every life stage. We bring the results directly to your living room.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Spectrum Grid -->
+        <section>
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
+                    <span
+                        style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">The
+                        Pawsome Spectrum</span>
+                    <h2 style="margin-top: 1rem;">Solutions for Every Paw</h2>
+                </div>
+                <div class="grid-3">
+                    <div class="card reveal-left">
+                        <div class="card-img-wrapper"><img
+                                src="https://images.pexels.com/photos/34762918/pexels-photo-34762918.jpeg"
+                                alt="Puppy Foundations"></div>
+                        <h3>Puppy Foundations</h3>
+                        <p>Critical socialization and foundation behaviors for dogs under 6 months old.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="card-img-wrapper"><img
+                                src="https://images.pexels.com/photos/1174081/pexels-photo-1174081.jpeg"
+                                alt="Calm & Control"></div>
+                        <h3>Calm & Control</h3>
+                        <p>Mastering leash reactivity and impulse control in high-distraction environments.</p>
+                    </div>
+                    <div class="card reveal-right">
+                        <div class="card-img-wrapper"><img
+                                src="https://images.pexels.com/photos/20728624/pexels-photo-20728624.jpeg"
+                                alt="Off-Leash Freedom"></div>
+                        <h3>Off-Leash Freedom</h3>
+                        <p>Bulletproof recall and reliable distance commands for a life of exploration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Value Add -->
+        <section style="background: var(--card-bg);">
+            <div class="container">
+                <div class="grid-resp-2">
+                    <div class="reveal-left" style="display: flex; justify-content: center; align-items: center;">
+                        <img src="https://images.pexels.com/photos/7788660/pexels-photo-7788660.jpeg"
+                            alt="Result Guarantee"
+                            style="border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); width: 85%; height: auto; object-fit: cover;">
+                    </div>
+                    <div class="reveal-right">
+                        <span
+                            style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">The
+                            Pawsome Promise</span>
+                        <h2 style="margin: 1.5rem 0 2rem;">Lasting Result Guarantee</h2>
+                        <p style="font-size: 1.1rem; opacity: 0.8; margin-bottom: 2.5rem; line-height: 1.8;">Our
+                            programs are designed for long-term sustainability. We don't just train during the session;
+                            we provide the digital tools, video libraries, and ongoing support you need to maintain the
+                            behavior for years to come.</p>
+                        <a href="pricing.html" class="btn btn-secondary">Explore Membership Perks</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Comparison Table -->
+        <section>
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+                    <span
+                        style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Comparison</span>
+                    <h2 style="margin-top: 1rem; margin-bottom: 1.5rem;">Choose Your Pathway</h2>
+                    <p style="opacity: 0.7; max-width: 600px; margin: 0 auto;">A transparent look at our premium
+                        pathways and what you can expect from each engagement.</p>
+                </div>
+                <div class="table-responsive" style="overflow-x: auto; padding: 1rem;">
+                    <table
+                        style="width: 100%; border-collapse: collapse; min-width: 700px; background: var(--card-bg); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <thead style="background: var(--secondary); color: white;">
+                            <tr>
+                                <th style="padding: 2rem; text-align: left;">Features</th>
+                                <th style="padding: 2rem; text-align: center;">Basic</th>
+                                <th style="padding: 2rem; text-align: center;">Elite</th>
+                                <th style="padding: 2rem; text-align: center;">Master</th>
+                            </tr>
+                        </thead>
+                        <tbody style="opacity: 0.9;">
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem; font-weight: 600;">In-Home Sessions</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;">4</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;">8</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;">12</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Digital Portal</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
+                                        style="color: #10b981;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
+                                        style="color: #10b981;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
+                                        style="color: #10b981;"></i></td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Video Review</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus"
+                                        style="opacity: 0.3;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
+                                        style="color: #10b981;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
+                                        style="color: #10b981;"></i></td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1.5rem 2rem; font-weight: 600;">Priority Support</td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus"
+                                        style="opacity: 0.3;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus"
+                                        style="opacity: 0.3;"></i></td>
+                                <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
+                                        style="color: #10b981;"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <!-- Section 5: Premium CTA (Centered Stack) -->
+        <section style="background: var(--bg); padding: 8rem 0; text-align: center;">
+            <div class="container">
+                <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 2rem;">Ready for a better-behaved companion?</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.8; margin-bottom: 3.5rem; line-height: 1.6;">Join hundreds of happy households who have transformed their lives through our behavioral science protocols. Your dog's potential is just one session away.</p>
+                    <a href="pricing.html" class="btn btn-primary" style="padding: 1.5rem 3rem; font-size: 1.1rem; border-radius: 50px;">Book Your Initial Session</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 🦶 FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="grid-4" style="margin-bottom: 5rem;">
+                <div>
+                    <a href="index.html" class="footer-logo">
+                        <i data-lucide="dog"></i> Pawsome
+                    </a>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
+                        in-home canine training through empathy and modern behavioral science.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-lucide="instagram"></i></a>
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Explore</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li>
+                            <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
+                                        data-lucide="chevron-down"></i></a>
+                                <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a
+                                        href="home-premium.html">Home 2 (Premium)</a></div>
+                            </div>
+                        </li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Legal</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 1.5rem;">Contact</h4>
+                    <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
+                        <li><i data-lucide="map-pin"></i> 123 Dog Lane, NY</li>
+                        <li><i data-lucide="phone"></i> (555) 123-PAWS</li>
+                        <li><i data-lucide="mail"></i> hello@pawsome.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; opacity: 0.5; font-size: 0.9rem;">
+                &copy; 2026 Pawsome Branding. All rights reserved. Professional Dog Training.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ⬆️ BACK TO TOP -->
+    <button id="back-to-top" class="back-to-top-btn" aria-label="Back to Top">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

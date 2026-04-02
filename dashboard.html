@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Pawsome Connect</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
+    <style>
+        :root {
+            --dash-sidebar-w: 280px;
+            --dash-header-h: 80px;
+            --dash-bg: #f1f5f9;
+        }
+
+        body[data-theme="dark"] {
+            --dash-bg: #0f172a;
+        }
+
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+            background: var(--dash-bg);
+            overflow-x: hidden;
+        }
+
+        /* 📂 SIDEBAR */
+        .sidebar-nav {
+            width: var(--dash-sidebar-w);
+            background: var(--card-bg);
+            border-right: 1px solid var(--border);
+            height: 100vh;
+            position: fixed;
+            left: 0; top: 0;
+            display: flex;
+            flex-direction: column;
+            z-index: 2000;
+            transition: var(--transition);
+        }
+
+        .sidebar-header {
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-items {
+            padding: 1.5rem;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            word-break: break-word;
+        }
+
+        .nav-item i { flex-shrink: 0; }
+        .nav-item span { white-space: nowrap; }
+
+        .nav-item:hover, .nav-item.active {
+            background: rgba(217, 119, 6, 0.1);
+            color: var(--primary);
+        }
+
+        .nav-item.logout {
+            margin-top: auto;
+            color: #ef4444;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+            border-radius: 0;
+        }
+
+        /* 📐 MAIN CONTENT AREA */
+        .main-wrapper {
+            flex: 1;
+            margin-left: var(--dash-sidebar-w);
+            display: flex;
+            flex-direction: column;
+            min-width: 0; /* Fix flex overflow */
+            transition: var(--transition);
+        }
+
+        .dash-header {
+            height: var(--dash-header-h);
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .content-area {
+            padding: 3rem;
+            flex: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .dash-section {
+            display: none;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .dash-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 📱 RESPONSIVENESS */
+        @media (max-width: 1024px) {
+            .sidebar-nav { transform: translateX(-100%); width: 280px; }
+            .sidebar-nav.active { transform: translateX(0); }
+            .main-wrapper { margin-left: 0; }
+            .dash-header { padding: 0 1.5rem; }
+            #hamburger { display: block !important; }
+            .content-area { padding: 2rem 1rem; }
+            .sidebar-header { justify-content: space-between; padding: 1.5rem; }
+        }
+
+        #hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+        /* REBUILD CARDS & LISTS */
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .dash-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 20px; padding: 2rem; transition: var(--transition); word-wrap: break-word; }
+        .dash-card:hover { border-color: var(--primary); }
+
+        /* FORM FIX */
+        .dash-form { display: grid; gap: 1.5rem; max-width: 600px; }
+        .dash-input { width: 100%; padding: 1rem; border-radius: 12px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-family: inherit; }
+
+        /* VIDEO GRID */
+        .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; }
+        .video-thumb { width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; }
+
+        /* NO SCROLL OVERFLOW */
+        * { word-wrap: break-word; overflow-wrap: break-word; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- 📂 SIDEBAR -->
+        <aside class="sidebar-nav" id="sidebar">
+            <div class="sidebar-header">
+                <button id="mobile-menu-trigger"><i data-lucide="menu"></i></button>
+                <a href="index.html" class="logo-brand">
+                    <i data-lucide="dog"></i> Pawsome
+                </a>
+                <button id="close-sidebar" style="display:none; background:none; border:none; color:var(--text);"><i data-lucide="x"></i></button>
+            </div>
+            <div class="nav-items">
+                <div class="nav-item active" data-target="overview"><i data-lucide="layout-dashboard"></i> <span>Dashboard</span></div>
+                <div class="nav-item" data-target="book"><i data-lucide="plus-circle"></i> <span>Book Session</span></div>
+                <div class="nav-item" data-target="sessions"><i data-lucide="calendar"></i> <span>My Sessions</span></div>
+                <div class="nav-item" data-target="progress"><i data-lucide="award"></i> <span>Dog Progress</span></div>
+                <div class="nav-item" data-target="videos"><i data-lucide="video"></i> <span>Training Videos</span></div>
+                <div class="nav-item" data-target="homework"><i data-lucide="clipboard-list"></i> <span>Homework</span></div>
+                <div class="nav-item" data-target="notes"><i data-lucide="sticky-note"></i> <span>Trainer Notes</span></div>
+                <div class="nav-item" data-target="notifications"><i data-lucide="bell"></i> <span>Notifications</span></div>
+                <div class="nav-item" data-target="profile"><i data-lucide="user"></i> <span>Profile</span></div>
+                <a href="index.html" class="nav-item logout" style="margin-top: 3rem;"><i data-lucide="log-out"></i> <span>Logout</span></a>
+            </div>
+        </aside>
+
+        <!-- 📐 MAIN CONTENT -->
+        <main class="main-wrapper">
+            <header class="dash-header">
+                <div style="display: flex; align-items: center; gap: 1rem; min-width: 0;">
+                    <button id="hamburger" style="padding: 0.5rem; margin-left: -0.5rem;"><i data-lucide="menu"></i></button>
+                    <h2 id="section-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: clamp(1rem, 4vw, 1.5rem);">Overview</h2>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1.5rem;">
+                    <button id="rtl-toggle" class="btn" style="background:none; color:var(--text); padding:0.5rem; border:1px solid var(--border); border-radius:50%;"><i data-lucide="languages"></i></button>
+                    <button id="theme-toggle" class="btn" style="background:none; color:var(--text); padding:0.5rem; border:1px solid var(--border); border-radius:50%;"><i data-lucide="moon"></i></button>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800;">W</div>
+                        <div class="user-info" style="text-align: left; @media(max-width:480px){display:none;}">
+                             <p style="font-weight: 700; font-size: 0.9rem;">Wolfgang M.</p>
+                             <p style="font-size: 0.7rem; opacity: 0.6;">Premium Member</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <!-- DASHBOARD (OVERVIEW) -->
+                <div id="overview" class="dash-section active">
+                    <h1 style="font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: 1rem;">Welcome back, Wolfgang! 👋</h1>
+                    <p style="opacity: 0.7; margin-bottom: 2rem;">Here's what's happening with your pack today.</p>
+                    
+                    <div class="stat-grid">
+                        <div class="dash-card">
+                            <i data-lucide="calendar-check" style="color:var(--primary); margin-bottom: 1rem;"></i>
+                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Next Session</h4>
+                            <p style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">April 18, 2026</p>
+                            <span style="color: var(--primary); font-size: 0.8rem;">At 10:00 AM</span>
+                        </div>
+                        <div class="dash-card">
+                            <i data-lucide="trending-up" style="color:var(--primary); margin-bottom: 1rem;"></i>
+                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Command Mastery</h4>
+                            <p style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">85% Completed</p>
+                            <div style="width:100%; height:6px; background:var(--border); border-radius:3px; margin-top:0.5rem;"><div style="width:85%; height:100%; background:var(--primary); border-radius:3px;"></div></div>
+                        </div>
+                        <div class="dash-card">
+                            <i data-lucide="check-square" style="color:var(--primary); margin-bottom: 1rem;"></i>
+                            <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Homework Tasks</h4>
+                            <p style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">3 Pending</p>
+                            <span style="color: #ef4444; font-size: 0.8rem;">Requires attention</span>
+                        </div>
+                    </div>
+
+                    <div class="dash-card" style="margin-top: 2rem;">
+                         <h3 style="margin-bottom: 1.5rem;">Recent Activity</h3>
+                         <div style="display: flex; flex-direction: column; gap: 1rem;">
+                              <div style="display: flex; justify-content: space-between; padding: 1rem; background: var(--bg); border-radius: 12px;">
+                                   <span>In-home training session completed</span>
+                                   <span style="opacity: 0.5; font-size: 0.8rem;">2 days ago</span>
+                              </div>
+                              <div style="display: flex; justify-content: space-between; padding: 1rem; background: var(--bg); border-radius: 12px;">
+                                   <span>New training video unlocked: "Advanced Recall"</span>
+                                   <span style="opacity: 0.5; font-size: 0.8rem;">4 days ago</span>
+                              </div>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- BOOK SESSION -->
+                <div id="book" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;">Book a New Session</h2>
+                    <form class="dash-form">
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Service Type</label>
+                            <select class="dash-input">
+                                <option>Initial In-Home Audit</option>
+                                <option>In-Home Behavioral Session</option>
+                                <option>Puppy Foundations Package</option>
+                                <option>Group Socialization (Outdoor)</option>
+                            </select>
+                        </div>
+                        <div class="grid-resp-2" style="gap: 1rem;">
+                            <div>
+                                <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Preferred Date</label>
+                                <input type="date" class="dash-input">
+                            </div>
+                            <div>
+                                <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Preferred Time</label>
+                                <input type="time" class="dash-input">
+                            </div>
+                        </div>
+                        <div>
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:600;">Notes for Trainer</label>
+                            <textarea class="dash-input" style="height: 120px;" placeholder="What behavior would you like to focus on?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="padding: 1.25rem;">Confirm Booking Request</button>
+                    </form>
+                </div>
+
+                <!-- MY SESSIONS -->
+                <div id="sessions" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;">My Scheduled Sessions</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div class="dash-card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Advanced Recall Mastery</h4>
+                                <p style="font-size: 0.9rem; opacity: 0.7;"><i data-lucide="map-pin" style="width:14px;"></i> At Home - 123 Dog Lane</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <p style="font-weight: 700; color: var(--primary);">April 18, 10:00 AM</p>
+                                <span style="background: #dcfce7; color: #166534; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800;">CONFIRMED</span>
+                            </div>
+                        </div>
+                        <div class="dash-card" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                            <div>
+                                <h4 style="margin-bottom: 0.25rem;">Leash Reactivity Audit</h4>
+                                <p style="font-size: 0.9rem; opacity: 0.7;"><i data-lucide="map-pin" style="width:14px;"></i> Central Park South</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <p style="font-weight: 700; opacity: 0.5;">May 02, 11:30 AM</p>
+                                <span style="background: #f1f5f9; color: #64748b; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800;">PENDING</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DOG PROGRESS -->
+                <div id="progress" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;">Wolf's Progress Tracker</h2>
+                    <div class="grid-2">
+                        <div class="dash-card">
+                             <h3 style="margin-bottom: 1.5rem;">Behavioral Score</h3>
+                             <div style="display: flex; align-items: center; justify-content: center; height: 150px;">
+                                 <div style="width: 120px; height: 120px; border-radius: 50%; border: 10px solid var(--primary); display: flex; align-items: center; justify-content: center;">
+                                     <h1 style="font-size: 2.5rem;">8.5</h1>
+                                 </div>
+                             </div>
+                             <p style="text-align: center; margin-top: 1rem; opacity: 0.7;">"Significant improvement in impulse control and reactivity levels."</p>
+                        </div>
+                        <div class="dash-card">
+                             <h3 style="margin-bottom: 1.5rem;">Skill Checklist</h3>
+                             <ul style="display: flex; flex-direction: column; gap: 1rem;">
+                                 <li style="display: flex; justify-content: space-between; align-items: center;"><span>Heel Position</span> <i data-lucide="check-circle" style="color: #22c55e;"></i></li>
+                                 <li style="display: flex; justify-content: space-between; align-items: center;"><span>Place Command</span> <i data-lucide="check-circle" style="color: #22c55e;"></i></li>
+                                 <li style="display: flex; justify-content: space-between; align-items: center;"><span>Duration Stay</span> <i data-lucide="clock" style="color: var(--primary);"></i></li>
+                                 <li style="display: flex; justify-content: space-between; align-items: center;"><span>Park Recall</span> <i data-lucide="circle" style="opacity: 0.2;"></i></li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TRAINING VIDEOS -->
+                <div id="videos" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;">Training Video Library</h2>
+                    <div class="video-grid">
+                        <div class="dash-card" style="padding: 0; overflow: hidden;">
+                             <div class="video-thumb"><i data-lucide="play" style="width: 50px; height:50px;"></i></div>
+                             <div style="padding: 1.5rem;">
+                                 <h4>Mastering the 'Set'</h4>
+                                 <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 0.5rem;">Basics • 12 mins</p>
+                             </div>
+                        </div>
+                        <div class="dash-card" style="padding: 0; overflow: hidden;">
+                             <div class="video-thumb"><i data-lucide="play" style="width: 50px; height:50px;"></i></div>
+                             <div style="padding: 1.5rem;">
+                                 <h4>Urban Leash Handling</h4>
+                                 <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 0.5rem;">Behavioral • 18 mins</p>
+                             </div>
+                        </div>
+                        <div class="dash-card" style="padding: 0; overflow: hidden;">
+                             <div class="video-thumb"><i data-lucide="lock" style="width: 40px; opacity: 0.5;"></i></div>
+                             <div style="padding: 1.5rem; opacity: 0.5;">
+                                 <h4>Advanced Free Work</h4>
+                                 <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 0.5rem;">Unlocked at Level 5</p>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HOMEWORK -->
+                <div id="homework" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;">Homework Tasks</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                         <div class="dash-card" style="display:flex; align-items:center; gap: 1.5rem;">
+                             <input type="checkbox" style="width: 24px; height: 24px; accent-color: var(--primary);">
+                             <div>
+                                 <h4 style="margin-bottom: 0.25rem;">Impulse Control Stays</h4>
+                                 <p style="font-size: 0.9rem; opacity: 0.7;">Practice 3 minutes of stay while toys are moved around him.</p>
+                             </div>
+                         </div>
+                         <div class="dash-card" style="display:flex; align-items:center; gap: 1.5rem;">
+                             <input type="checkbox" style="width: 24px; height: 24px; accent-color: var(--primary);">
+                             <div>
+                                 <h4 style="margin-bottom: 0.25rem;">Urban Sound Desensitization</h4>
+                                 <p style="font-size: 0.9rem; opacity: 0.7;">10 minutes sitting near the park entrance during bike traffic.</p>
+                             </div>
+                         </div>
+                    </div>
+                </div>
+
+                <!-- TRAINER NOTES -->
+                <div id="notes" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;">Lead Trainer Notes</h2>
+                    <div class="dash-card" style="background: rgba(217, 119, 6, 0.05); border-left: 8px solid var(--primary);">
+                        <p style="font-style: italic; font-size: 1.1rem; line-height: 1.8; opacity: 0.8;">"Wolf is making exceptional progress with the 'Place' command. He is beginning to settle much faster. Please ensure you are rewarding the calm settle, not just the action of getting on the bed. Keep up the high-value salmon treats for the recall practice—it's clearly his favorite motivator!"</p>
+                        <p style="margin-top: 2rem; font-weight: 800;">- Alex Paws, Head Specialist</p>
+                        <p style="font-size: 0.8rem; opacity: 0.5;">Sent April 12, 2026</p>
+                    </div>
+                </div>
+
+                <!-- NOTIFICATIONS -->
+                <div id="notifications" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;">Your Notifications</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid #3b82f6; display: flex; gap: 1rem; align-items: flex-start;">
+                            <i data-lucide="info" style="color: #3b82f6; margin-top: 0.25rem;"></i>
+                            <div>
+                                <p style="font-weight: 700;">New Training Guide Available</p>
+                                <p style="opacity: 0.7; font-size: 0.9rem;">"How to handle rainy day exercise" has been added to the library.</p>
+                                <span style="font-size: 0.7rem; opacity: 0.5;">2 hours ago</span>
+                            </div>
+                        </div>
+                        <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid #22c55e; display: flex; gap: 1rem; align-items: flex-start;">
+                            <i data-lucide="check-circle" style="color: #22c55e; margin-top: 0.25rem;"></i>
+                            <div>
+                                <p style="font-weight: 700;">Session Confirmed</p>
+                                <p style="opacity: 0.7; font-size: 0.9rem;">Your session on April 18 at 10 AM is now confirmed.</p>
+                                <span style="font-size: 0.7rem; opacity: 0.5;">Yesterday</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROFILE -->
+                <div id="profile" class="dash-section">
+                    <h2 style="margin-bottom: 2rem;">User Profile Settings</h2>
+                    <div class="dash-card">
+                        <form class="dash-form">
+                            <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
+                                <div style="width: 100px; height: 100px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: white; font-weight: 800;">W</div>
+                                <button class="btn btn-secondary" style="font-size: 0.8rem;">Change Photo</button>
+                            </div>
+                            <div class="grid-resp-2">
+                                <div><label style="display:block; margin-bottom:0.5rem;">First Name</label><input type="text" class="dash-input" value="Wolfgang"></div>
+                                <div><label style="display:block; margin-bottom:0.5rem;">Last Name</label><input type="text" class="dash-input" value="Müller"></div>
+                            </div>
+                            <div><label style="display:block; margin-bottom:0.5rem;">Email Address</label><input type="email" class="dash-input" value="wolfie@example.com"></div>
+                            <div><label style="display:block; margin-bottom:0.5rem;">Dog's Name</label><input type="text" class="dash-input" value="Fido"></div>
+                            <button type="submit" class="btn btn-primary" style="width: fit-content; margin-top: 1rem;">Save Profile Changes</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 🛠️ SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 🎨 Lucide Icons
+            if (window.lucide) lucide.createIcons();
+
+            const sidebar = document.getElementById('sidebar');
+            const hamburger = document.getElementById('hamburger');
+            const sectionTitle = document.getElementById('section-title');
+            const navItems = document.querySelectorAll('.nav-item[data-target]');
+            const sections = document.querySelectorAll('.dash-section');
+
+            // 📂 Navigation Logic
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const target = item.getAttribute('data-target');
+                    
+                    // Update Active State
+                    navItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+
+                    // Show Sections
+                    sections.forEach(s => s.classList.remove('active'));
+                    const targetSection = document.getElementById(target);
+                    if (targetSection) targetSection.classList.add('active');
+
+                    // Update Header Title
+                    sectionTitle.textContent = item.querySelector('span').textContent;
+
+                    // Close Sidebar on mobile after click
+                    if (window.innerWidth <= 1024) {
+                        sidebar.classList.remove('active');
+                    }
+                });
+            });
+
+            // 📱 Mobile Toggle
+            hamburger.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+
+            // 🌗 Theme Toggle
+            const themeBtn = document.getElementById('theme-toggle');
+            themeBtn.addEventListener('click', () => {
+                const currentTheme = document.body.getAttribute('data-theme') || 'light';
+                const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+                document.body.setAttribute('data-theme', nextTheme);
+                localStorage.setItem('theme', nextTheme);
+                // Simple toggle icon flip
+                themeBtn.querySelector('i').setAttribute('data-lucide', nextTheme === 'light' ? 'moon' : 'sun');
+                lucide.createIcons();
+            });
+
+            // Initialize theme from storage
+            const storedTheme = localStorage.getItem('theme');
+            if (storedTheme) {
+                document.body.setAttribute('data-theme', storedTheme);
+                themeBtn.querySelector('i').setAttribute('data-lucide', storedTheme === 'light' ? 'moon' : 'sun');
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>

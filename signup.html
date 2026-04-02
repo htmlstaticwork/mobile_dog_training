@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawsome | Member Sign Up</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
+    <style>
+        .social-auth {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="auth-wrapper">
+    <div style="position: absolute; top: 1.5rem; right: 1.5rem; display: flex; gap: 0.75rem; z-index: 10;">
+        <button id="theme-toggle" class="btn" style="background: var(--card-bg); color: inherit; width: 42px; height: 42px; border: 1px solid var(--border); padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px;"><i data-lucide="moon" style="width: 20px;"></i></button>
+        <button id="rtl-toggle" class="btn" style="background: var(--card-bg); color: inherit; width: 42px; height: 42px; border: 1px solid var(--border); padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px;"><i data-lucide="languages" style="width: 20px;"></i></button>
+    </div>
+
+    <div class="auth-card" style="max-width: 550px;">
+        <a href="index.html" class="logo-brand" style="justify-content: center; margin-bottom: 2rem;">
+            <i data-lucide="dog"></i> Pawsome
+        </a>
+        <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Join the Pack</h2>
+        <p style="opacity: 0.6; margin-bottom: 2.5rem;">Start your dog's journey to behavioral mastery.</p>
+
+        <form action="dashboard.html">
+            <input type="text" placeholder="First Name" class="auth-input" required>
+            <input type="text" placeholder="Last Name" class="auth-input" required>
+            <input type="email" placeholder="Email Address" class="auth-input" required>
+            <div style="position: relative; width: 100%;">
+                <input type="password" placeholder="Password" class="auth-input" style="width: 100%;" required>
+                <span class="password-toggle" style="position: absolute; right: 1rem; top: 1rem; cursor: pointer; color: #64748b;"><i data-lucide="eye"></i></span>
+            </div>
+            <div style="position: relative; width: 100%;">
+                <input type="password" placeholder="Confirm Password" class="auth-input" style="width: 100%;" required>
+                <span class="password-toggle" style="position: absolute; right: 1rem; top: 1rem; cursor: pointer; color: #64748b;"><i data-lucide="eye"></i></span>
+            </div>
+
+            <div style="margin-bottom: 2rem; text-align: left; font-size: 0.85rem;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer; opacity: 0.7;">
+                    <input type="checkbox" required> I agree to the <a href="#" style="color: var(--primary); font-weight: 700;">Terms & Conditions</a>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 12px;">Create My Account</button>
+        </form>
+
+        <div style="text-align: center; margin: 2rem 0; position: relative;">
+            <span style="background: var(--card-bg); padding: 0 1rem; position: relative; z-index: 1; font-size: 0.85rem; opacity: 0.6;">Or sign up with</span>
+            <div style="position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: var(--border);"></div>
+        </div>
+
+        <div class="social-auth">
+            <button class="btn btn-secondary" style="background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.75rem;"><i data-lucide="chrome" style="width: 20px;"></i> Google</button>
+            <button class="btn btn-secondary" style="background: var(--bg); border: 1px solid var(--border); color: var(--text); padding: 0.75rem;"><i data-lucide="apple" style="width: 20px;"></i> Apple</button>
+        </div>
+
+        <p style="margin-top: 3rem; font-size: 0.95rem; opacity: 0.7;">
+            Already a member? <a href="login.html" style="color: var(--primary); font-weight: 700;">Sign in here</a>
+        </p>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
