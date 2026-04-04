@@ -7,7 +7,7 @@
     <title>Training Programs | Pawsome Mobile Dog Training</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
     <style>
         /* Unique Animations for this page */
         @keyframes zoomInUp {
@@ -57,7 +57,8 @@
                             data-lucide="languages"></i> RTL</button>
                 </div>
 
-                <a href="login.html" class="btn btn-primary mobile-show" style="margin-top: 1rem; color: white; text-align: center;">Login</a>
+                <a href="login.html" class="btn btn-primary mobile-show"
+                    style="margin-top: 1rem; color: white; text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn mobile-hide"
@@ -76,7 +77,7 @@
     <main>
         <!-- 1️⃣ HERO SECTION -->
         <section class="hero-section"
-            style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/4060144/pexels-photo-4060144.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); background-size: cover; background-position: center; height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+            style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/4060144/pexels-photo-4060144.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover; min-height: 80vh; padding-top: calc(var(--header-height) + 4rem); padding-bottom: 4rem; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
             <div class="container animate-zoom-up">
                 <h1 style="font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 1.5rem; line-height: 1.1;">Personalized
                     Dog Training <br> <span style="color: var(--primary);">At Your Doorstep</span></h1>
@@ -159,6 +160,18 @@
                             <a href="#" class="btn btn-secondary" style="width: 100%;">Book Harmony</a>
                         </div>
                     </div>
+                    <!-- Elite Socialization -->
+                    <div class="card fade-in-up"
+                        style="padding: 0; overflow: hidden; border-radius: 24px; transition: transform 0.4s ease; border: 1px solid var(--border);">
+                        <img src="https://images.pexels.com/photos/20234981/pexels-photo-20234981.jpeg"
+                            alt="Elite Socialization" style="width: 100%; height: 250px; object-fit: cover;">
+                        <div style="padding: 2.5rem;">
+                            <h3 style="margin-bottom: 1rem;">Elite Socialization</h3>
+                            <p style="opacity: 0.7; margin-bottom: 2rem;">Focused exposure sessions to ensure your dog
+                                remains calm and confident.</p>
+                            <a href="#" class="btn btn-secondary" style="width: 100%;">Book Social</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -225,8 +238,8 @@
         <section style="padding: 10rem 0; background: var(--bg); overflow: hidden;">
             <div class="container">
                 <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 6rem;">
-                    <div style="flex: 1; min-width: 350px;" class="fade-in-left">
-                        <div style="position: relative;">
+                    <div style="flex: 1; min-width: 350px; display: flex; justify-content: center;" class="fade-in-left">
+                        <div style="position: relative; width: 100%; max-width: 450px;">
                             <img src="https://images.pexels.com/photos/5966455/pexels-photo-5966455.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
                                 alt="Why Choose Pawsome"
                                 style="width: 100%; border-radius: 40px; box-shadow: 0 40px 100px rgba(0,0,0,0.15);">
@@ -311,6 +324,7 @@
         </section>
     </main>
 
+    <!-- 🦶 FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-grid" style="margin-bottom: 5rem;">
@@ -318,12 +332,13 @@
                     <a href="index.html" class="footer-logo">
                         <i data-lucide="dog"></i> Pawsome
                     </a>
-                    <p style="opacity: 0.7; max-width: 300px; margin-bottom: 2rem;">The world's leading in-home dog
-                        training service. Science-based, positive reinforcement methods.</p>
+                    <p style="opacity: 0.7; margin-bottom: 2rem; max-width: 300px;">Setting the elite standard for
+                        in-home canine training through empathy and modern behavioral science.</p>
                     <div class="social-links">
                         <a href="#"><i data-lucide="instagram"></i></a>
                         <a href="#"><i data-lucide="facebook"></i></a>
                         <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
                     </div>
                 </div>
                 <div>
@@ -365,6 +380,13 @@
     </button>
 
     <script src="scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
 </body>
 
 </html>

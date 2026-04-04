@@ -8,7 +8,6 @@
     <meta name="description" content="Expert dog training in your home. Catchy brand, modern results.">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
 </head>
 
@@ -125,7 +124,7 @@
                 <div class="grid-resp-2">
                     <div class="reveal-left" style="display: flex; justify-content: center;">
                         <img src="assets/images/how-it-works.png" alt="Training Process"
-                            style="border-radius: 24px; box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0 var(--primary); max-width: 85%; height: auto; object-fit: cover;">
+                            style="border-radius: 24px; box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0 var(--primary); max-width: 75%; height: auto; object-fit: cover;">
                     </div>
                     <div class="reveal-right">
                         <h2 style="margin-bottom: 2rem;">A Simple Path to a Better Dog</h2>
@@ -193,7 +192,7 @@
                     </div>
                     <div class="reveal-right" style="display: flex; justify-content: center;">
                         <img src="assets/images/trainer.png" alt="Professional Trainer"
-                            style="border-radius: 24px; border: 10px solid var(--card-bg); outline: 1px solid var(--border); max-width: 85%; height: auto; object-fit: cover;">
+                            style="border-radius: 24px; border: 10px solid var(--card-bg); outline: 1px solid var(--border); max-width: 75%; height: auto; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -347,6 +346,13 @@
     </button>
 
     <script src="scripts/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+        });
+    </script>
 </body>
 
 </html>
