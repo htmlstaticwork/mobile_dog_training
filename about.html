@@ -34,7 +34,7 @@
                     <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
                 </div>
                 
-                <a href="login.html" class="btn btn-secondary mobile-show" style="margin-top: 1rem;">Login</a>
+                <a href="login.html" class="btn btn-primary mobile-show" style="margin-top: 1rem; color: white; text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
@@ -67,7 +67,7 @@
                 <div class="grid-resp-2">
                     <div class="reveal-left" style="display: flex; justify-content: center;">
                         <img src="assets/images/about-values.png" alt="Core Values"
-                            style="border-radius: 24px; box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0 var(--primary); max-width: 70%; height: auto; object-fit: cover;">
+                            style="border-radius: 24px; box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0 var(--primary); width: 100%; max-width: 500px; height: auto;">
                     </div>
                     <div class="reveal-right">
                         <span
@@ -105,31 +105,26 @@
                         love. Our three pillars of training excellence define every interaction.</p>
                 </div>
                 <div class="grid-3" style="align-items: stretch;">
-                    <div class="card reveal-left" style="text-align: center; padding: 3rem 2rem;">
-                        <div class="card-img-wrapper"
-                            style="width: 120px; height: 80px; margin: 0 auto 2rem; border-radius: 16px; overflow: hidden;">
-                            <img src="https://images.pexels.com/photos/191353/pexels-photo-191353.jpeg" alt="Compassion"
-                                style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="card reveal-left" style="text-align: center; padding: 2.5rem;">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.pexels.com/photos/191353/pexels-photo-191353.jpeg" alt="Compassion">
                         </div>
                         <h3 style="margin-bottom: 1.5rem;">Compassion</h3>
                         <p style="opacity: 0.8; line-height: 1.7;">Compassion first in every session, building a bond
                             beyond simple obedience and creating lasting trust.</p>
                     </div>
-                    <div class="card reveal" style="text-align: center; padding: 3rem 2rem;">
-                        <div class="card-img-wrapper"
-                            style="width: 120px; height: 80px; margin: 0 auto 2rem; border-radius: 16px; overflow: hidden;">
-                            <img src="https://images.pexels.com/photos/8499441/pexels-photo-8499441.jpeg" alt="Science"
-                                style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="card reveal" style="text-align: center; padding: 2.5rem;">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.pexels.com/photos/8499441/pexels-photo-8499441.jpeg" alt="Science">
                         </div>
                         <h3 style="margin-bottom: 1.5rem;">Science</h3>
                         <p style="opacity: 0.8; line-height: 1.7;">Science-driven behavioral protocols based on the
                             latest ethology research for measurable results.</p>
                     </div>
-                    <div class="card reveal-right" style="text-align: center; padding: 3rem 2rem;">
-                        <div class="card-img-wrapper"
-                            style="width: 120px; height: 80px; margin: 0 auto 2rem; border-radius: 16px; overflow: hidden;">
+                    <div class="card reveal-right" style="text-align: center; padding: 2.5rem;">
+                        <div class="card-img-wrapper">
                             <img src="https://images.pexels.com/photos/10394140/pexels-photo-10394140.jpeg"
-                                alt="Real-world" style="width: 100%; height: 100%; object-fit: cover;">
+                                alt="Real-world">
                         </div>
                         <h3 style="margin-bottom: 1.5rem;">Real-world</h3>
                         <p style="opacity: 0.8; line-height: 1.7;">Real-world context in shared spaces where your dog
@@ -167,7 +162,7 @@
                     <div class="reveal-right" style="display: flex; justify-content: center;">
                         <img src="https://images.pexels.com/photos/8327660/pexels-photo-8327660.jpeg"
                             alt="Team Collaboration"
-                            style="border-radius: 24px; box-shadow: clamp(-20px, -2vw, -10px) clamp(10px, 2vw, 20px) 0 var(--secondary); max-width: 70%; height: auto; object-fit: cover;">
+                            style="border-radius: 24px; box-shadow: clamp(-20px, -2vw, -10px) clamp(10px, 2vw, 20px) 0 var(--secondary); width: 100%; max-width: 500px; height: auto;">
                     </div>
                 </div>
             </div>
@@ -215,7 +210,7 @@
     <!-- 🦶 FOOTER -->
     <footer>
         <div class="container">
-            <div class="grid-4" style="margin-bottom: 5rem;">
+            <div class="footer-grid" style="margin-bottom: 5rem;">
                 <div>
                     <a href="index.html" class="footer-logo">
                         <i data-lucide="dog"></i> Pawsome
@@ -232,13 +227,8 @@
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
                     <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li>
-                            <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
-                                        data-lucide="chevron-down"></i></a>
-                                <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a
-                                        href="home-premium.html">Home 2 (Premium)</a></div>
-                            </div>
-                        </li>
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-premium.html">Home 2</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                     </ul>

@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 4rem;
+            align-items: stretch;
+        }
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +48,7 @@
                     <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
                 </div>
                 
-                <a href="login.html" class="btn btn-secondary mobile-show" style="margin-top: 1rem;">Login</a>
+                <a href="login.html" class="btn btn-primary mobile-show" style="margin-top: 1rem; color: white; text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
@@ -62,7 +76,7 @@
         <!-- Section: Contact Columns -->
         <section style="background: var(--bg);">
             <div class="container">
-                <div class="grid-resp-2" style="gap: 4rem; align-items: stretch;">
+                <div class="contact-grid">
                     <!-- Left: Contact Details -->
                     <div class="reveal-left" style="height: 100%;">
                         <div class="card" style="padding: clamp(2rem, 5vw, 4rem); height: 100%; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center;">
@@ -168,7 +182,7 @@
     <!-- 🦶 FOOTER -->
     <footer>
         <div class="container">
-            <div class="grid-4" style="margin-bottom: 5rem;">
+            <div class="footer-grid" style="margin-bottom: 5rem;">
                 <div>
                     <a href="index.html" class="footer-logo">
                         <i data-lucide="dog"></i> Pawsome
@@ -185,13 +199,8 @@
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
                     <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li>
-                            <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
-                                        data-lucide="chevron-down"></i></a>
-                                <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a
-                                        href="home-premium.html">Home 2 (Premium)</a></div>
-                            </div>
-                        </li>
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-premium.html">Home 2</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                     </ul>

@@ -41,7 +41,7 @@
                     <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
                 </div>
                 
-                <a href="login.html" class="btn btn-secondary mobile-show" style="margin-top: 1rem;">Login</a>
+                <a href="login.html" class="btn btn-primary mobile-show" style="margin-top: 1rem; color: white; text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
                 <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
@@ -102,7 +102,7 @@
                     </div>
                     <div class="reveal-right" style="display: flex; justify-content: center;">
                         <img src="assets/images/problem-dog.png" alt="Before & After"
-                            style="border-radius: 50px; max-width: 80%; height: auto; object-fit: cover;">
+                            style="border-radius: 40px; width: 100%; max-width: 650px; height: auto;">
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
                         </div>
                         <h3>Puppy Prestige</h3>
                         <p>Start the journey correctly. High-end socialization and basic command mastery in weeks.</p>
-                        <div class="card-cta">Explore Program <i data-lucide="arrow-right"></i></div>
+                        <a href="programs.html" class="card-cta">Explore Program <i data-lucide="arrow-right"></i></a>
                     </div>
                     <div class="card reveal">
                         <div class="card-img-wrapper">
@@ -133,7 +133,7 @@
                         <h3>Zen Behavioral</h3>
                         <p>Calm composure for the reactive dog. Specialized desensitization protocols for city living.
                         </p>
-                        <div class="card-cta">Explore Program <i data-lucide="arrow-right"></i></div>
+                        <a href="programs.html" class="card-cta">Explore Program <i data-lucide="arrow-right"></i></a>
                     </div>
                     <div class="card reveal-right">
                         <div class="card-img-wrapper">
@@ -142,7 +142,7 @@
                         </div>
                         <h3>Master Obedience</h3>
                         <p>The elite standard. Total focus and reliability under any distraction, anywhere.</p>
-                        <div class="card-cta">Explore Program <i data-lucide="arrow-right"></i></div>
+                        <a href="programs.html" class="card-cta">Explore Program <i data-lucide="arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -187,7 +187,7 @@
                     </div>
                     <div class="card reveal-right" style="background: var(--bg); border-color: var(--primary);">
                         <div style="display: flex; align-items: flex-start; gap: 1.5rem; flex-wrap: wrap;">
-                            <img src="https://images.pexels.com/photos/712514/pexels-photo-712514.jpeg" alt="Elena K."
+                            <img src="https://images.pexels.com/photos/6234609/pexels-photo-6234609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Elena K."
                                 style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); background: var(--card-bg);">
                             <div style="flex: 1; min-width: 250px;">
                                 <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">"Remarkable shift in
@@ -209,7 +209,7 @@
                     <h2 style="color: white; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem;">Experience the Difference</h2>
                     <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3rem;">Reserve your confidential behavioral audit today and start your dog's journey to absolute reliability.</p>
                     <a href="contact.html" class="btn btn-secondary"
-                        style="background: white; color: var(--primary); padding: 1.25rem 4rem; font-size: 1.25rem; border: none; width: fit-content;">Book My Consultation <i data-lucide="chevron-right"></i></a>
+                        style="background: white; color: var(--primary); padding: 1.25rem clamp(1.5rem, 5vw, 4rem); font-size: clamp(1rem, 5vw, 1.25rem); border: none; width: fit-content; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.5rem; margin: 0 auto;">Book My Consultation <i data-lucide="chevron-right"></i></a>
                 </div>
             </div>
         </section>
@@ -218,7 +218,7 @@
     <!-- Footer same as index -->    <!-- 🦶 FOOTER -->
     <footer>
         <div class="container">
-            <div class="grid-4" style="margin-bottom: 5rem;">
+            <div class="footer-grid" style="margin-bottom: 5rem;">
                 <div>
                     <a href="index.html" class="footer-logo">
                         <i data-lucide="dog"></i> Pawsome
@@ -235,13 +235,8 @@
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
                     <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li>
-                            <div class="dropdown"><a href="javascript:void(0)" class="dropdown-trigger">Home <i
-                                        data-lucide="chevron-down"></i></a>
-                                <div class="dropdown-menu"><a href="index.html">Home 1 (Classic)</a><a
-                                        href="home-premium.html">Home 2 (Premium)</a></div>
-                            </div>
-                        </li>
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="home-premium.html">Home 2</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                     </ul>

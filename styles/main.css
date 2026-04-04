@@ -35,7 +35,7 @@
     --bg: #0F172A;
     --card-bg: #1E293B;
     --text: #F8FAFC;
-    --border: #334155;
+    --border: #475569;
     --white: #FFFFFF;
     --footer-bg: #020617;
     --footer-text: #F8FAFC;
@@ -246,7 +246,7 @@ header {
         position: static;
         width: 100%;
         box-shadow: none;
-        border: none;
+        border: 1px solid var(--border);
         background: rgba(0,0,0,0.02);
         margin: 0.5rem 0;
         padding: 0.5rem;
@@ -261,7 +261,7 @@ header {
     .mobile-show { display: flex !important; }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 1101px) {
     .mobile-show { display: none !important; }
 }
 
@@ -352,12 +352,11 @@ footer a:hover {
 }
 
 .card-img-wrapper {
-    width: 100%;
-    margin-bottom: 1.5rem;
-    padding: 0;
+    width: calc(100% + 5rem);
+    margin: -2.5rem -2.5rem 1.5rem -2.5rem;
     overflow: hidden;
-    aspect-ratio: 2/1;
-    border-radius: 12px;
+    aspect-ratio: 16/9;
+    border-radius: 20px 20px 0 0;
 }
 
 .card-img-wrapper img {
@@ -387,11 +386,41 @@ footer a:hover {
     margin-top: auto;
     color: var(--primary);
     font-weight: 700;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     cursor: pointer;
     font-family: 'Outfit', sans-serif;
+    position: relative;
+    width: fit-content;
+    padding: 2px 0;
+    transition: var(--transition);
+}
+
+.card-cta::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 0;
+    height: 8px;
+    background: var(--primary);
+    opacity: 0.15;
+    z-index: -1;
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.card-cta:hover::after {
+    width: 100%;
+}
+
+.card-cta i {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-cta:hover i {
+    transform: translateX(6px);
 }
 
 /* --- BUTTONS --- */
@@ -422,6 +451,47 @@ i[data-lucide], svg.lucide {
 
 .btn-secondary { background: var(--secondary); color: white; }
 .btn-secondary:hover { background: var(--primary); transform: scale(1.05); }
+
+/* Dark Mode Button Fixes */
+[data-theme="dark"] .btn-primary {
+    background: var(--primary) !important;
+    color: white !important;
+    box-shadow: 0 10px 30px rgba(217, 119, 6, 0.4);
+}
+
+[data-theme="dark"] .btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid var(--border);
+    color: white;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Theme & RTL Toggle Hover States */
+#theme-toggle:hover,
+#rtl-toggle:hover,
+#theme-toggle-mob:hover,
+#rtl-toggle-mob:hover {
+    background: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+    transform: scale(1.08);
+}
+
+#theme-toggle:hover i,
+#theme-toggle:hover svg,
+#rtl-toggle:hover i,
+#rtl-toggle:hover svg,
+#theme-toggle-mob:hover i,
+#theme-toggle-mob:hover svg,
+#rtl-toggle-mob:hover i,
+#rtl-toggle-mob:hover svg {
+    color: white !important;
+    stroke: white;
+}
 
 /* --- SECTIONS --- */
 section { padding: clamp(4rem, 10vw, 8rem) 0; overflow: hidden; }
@@ -484,8 +554,21 @@ section { padding: clamp(4rem, 10vw, 8rem) 0; overflow: hidden; }
     .hero-section .btn { width: 100%; margin-bottom: 0.5rem; }
 }
 
+/* --- FOOTER GRID --- */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+}
+
 @media (max-width: 580px) {
-    .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1rem; }
+    .footer-grid > div:first-child, .footer-grid > div:last-child { grid-column: span 2; }
 }
 
 /* End of animations */
@@ -504,6 +587,7 @@ section { padding: clamp(4rem, 10vw, 8rem) 0; overflow: hidden; }
     width: 90%; max-width: 500px;
     padding: clamp(2rem, 8vw, 4rem);
     border-radius: 24px;
+    border: 1px solid var(--border);
     box-shadow: 0 40px 100px rgba(0,0,0,0.3);
     text-align: center;
     margin: 2rem auto;
@@ -513,6 +597,18 @@ section { padding: clamp(4rem, 10vw, 8rem) 0; overflow: hidden; }
     border: 1px solid var(--border); border-radius: 12px;
     background: var(--bg); color: var(--text);
     font-size: 1rem;
+}
+
+.auth-card a { 
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition); 
+}
+
+.auth-card a:hover { 
+    color: var(--secondary) !important;
+    text-decoration: underline;
 }
 
 /* --- DASHBOARD --- */
