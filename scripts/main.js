@@ -15,13 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const updateIcons = () => {
         const currentTheme = localStorage.getItem('theme') || 'light';
-        const themeBtn = document.getElementById('theme-toggle');
-        if (themeBtn) {
-            const icon = themeBtn.querySelector('i');
-            if (icon) {
-                icon.setAttribute('data-lucide', currentTheme === 'light' ? 'moon' : 'sun');
-                lucide.createIcons();
+        const btns = ['theme-toggle', 'theme-toggle-mob'];
+        btns.forEach(id => {
+            const btn = document.getElementById(id);
+            if (btn) {
+                const icon = btn.querySelector('i');
+                if (icon) {
+                    icon.setAttribute('data-lucide', currentTheme === 'light' ? 'moon' : 'sun');
+                }
             }
+        });
+        if (window.lucide) {
+            lucide.createIcons();
         }
     };
 
@@ -36,12 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const setActiveNavLink = () => {
         const currentPath = window.location.pathname.split('/').pop() || 'index.html';
         const navLinks = document.querySelectorAll('.nav-links a, .nav-items .nav-item');
-        
+
         navLinks.forEach(link => {
             const href = link.getAttribute('href') || link.getAttribute('data-target') + '.html';
             if (href === currentPath) {
                 link.classList.add('active');
-                
+
                 // If it's a dropdown child, also highlight the parent
                 const parentDropdown = link.closest('.dropdown');
                 if (parentDropdown) {
@@ -90,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const trigger = e.target.closest('.btn-primary') || e.target.closest('.book-trigger');
         if (trigger && !trigger.closest('header') && !trigger.closest('footer') && !trigger.closest('.auth-card') && !trigger.closest('form')) {
             if (trigger.textContent.includes('Book') || trigger.classList.contains('reveal-zoom')) {
-                 if (popupOverlay) popupOverlay.style.display = 'flex';
+                if (popupOverlay) popupOverlay.style.display = 'flex';
             }
         }
         if (e.target === popupOverlay || e.target.closest('.close-popup')) {
@@ -120,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', (e) => {
         const trigger = e.target.closest('#mobile-menu-trigger');
         const navLinks = document.querySelector('.nav-links');
-        
+
         if (trigger) {
             e.stopPropagation();
             const isActive = !navLinks.classList.contains('active');
@@ -143,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             const dropdown = dropdownTrigger.closest('.dropdown');
             const isActive = dropdown.classList.contains('active');
-            
+
             document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
             if (!isActive) dropdown.classList.add('active');
         } else if (!e.target.closest('.dropdown')) {
@@ -179,10 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const item = trigger.parentElement;
             const content = item.querySelector('.faq-content');
             const icon = trigger.querySelector('.faq-icon');
-            
+
             // Check if active
             const isActive = item.classList.contains('active');
-            
+
             // Close all others
             document.querySelectorAll('.faq-item').forEach(other => {
                 other.classList.remove('active');
@@ -201,20 +206,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ⬆️ Back to Top Logic
     const backToTopBtn = document.getElementById('back-to-top');
-    if (backToTopBtn) {
+    const header = document.querySelector('header');
+
+    if (backToTopBtn || header) {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
+            if (backToTopBtn) {
+                if (window.scrollY > 500) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            }
+
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
             }
         });
 
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Trigger once on load
+        if (header && window.scrollY > 50) {
+            header.classList.add('scrolled');
+        }
+
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
-        });
+        }
     }
 });

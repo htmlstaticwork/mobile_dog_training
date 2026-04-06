@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.364.0/dist/umd/lucide.min.js"></script>
 </head>
+
 <body>
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -28,18 +30,24 @@
                 <a href="dashboard.html" style="font-weight: 700;">Dashboard</a>
                 <!-- Toggles inside menu for mobile ONLY -->
                 <div class="mobile-show" style="gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
-                    <button id="theme-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="moon"></i> Theme</button>
-                    <button id="rtl-toggle-mob" class="btn" style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i data-lucide="languages"></i> RTL</button>
+                    <button id="theme-toggle-mob" class="btn"
+                        style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i
+                            data-lucide="moon"></i> Theme</button>
+                    <button id="rtl-toggle-mob" class="btn"
+                        style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i
+                            data-lucide="languages"></i> RTL</button>
                 </div>
-                
-                <a href="login.html" class="btn btn-primary mobile-show" style="margin-top: 1rem; color: white; text-align: center;">Login</a>
+
+                <a href="login.html" class="btn btn-primary mobile-show"
+                    style="margin-top: 1rem; color: white; text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
-                        data-lucide="moon"></i></button>
-                <button id="rtl-toggle" class="btn mobile-hide" style="background: none; color: inherit; padding: 0.5rem;"><i
-                        data-lucide="languages"></i></button>
-                <button id="mobile-menu-trigger" style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
+                <button id="theme-toggle" class="btn mobile-hide"
+                    style="background: none; color: inherit; padding: 0.5rem;"><i data-lucide="moon"></i></button>
+                <button id="rtl-toggle" class="btn mobile-hide"
+                    style="background: none; color: inherit; padding: 0.5rem;"><i data-lucide="languages"></i></button>
+                <button id="mobile-menu-trigger"
+                    style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
                     <i data-lucide="menu"></i>
                 </button>
                 <a href="login.html" class="btn btn-secondary mobile-hide">Login</a>
@@ -49,10 +57,13 @@
 
     <main>
         <!-- Section 1: Hero (Pricing) -->
-        <section class="reveal-zoom" style="background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/3628100/pexels-photo-3628100.jpeg') no-repeat center center/cover; padding: 12rem 0; color: white; text-align: center;">
+        <section class="reveal-zoom"
+            style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/3628100/pexels-photo-3628100.jpeg'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 12rem 0; color: white; text-align: center; width: 100%;">
             <div class="container">
-                <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2.5rem;">The Best Investment You'll Ever Make</h1>
-                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Transparent pathways for elite behavioral coaching. We bring elite results directly to your living room.</p>
+                <h1 style="color: white; font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 2.5rem;">The Best
+                    Investment You'll Ever Make</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">Transparent pathways for
+                    elite behavioral coaching. We bring elite results directly to your living room.</p>
             </div>
         </section>
 
@@ -63,37 +74,69 @@
                     <div class="card reveal-left" style="text-align: center; padding-top: 3rem;">
                         <span style="opacity: 0.5; font-weight: 700; text-transform: uppercase;">Evaluation</span>
                         <h2 style="margin: 1.5rem 0;">$149</h2>
-                        <ul style="margin-bottom: 3rem; opacity: 0.8; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem;">
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> In-home Behavioral Audit</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 90-minute session</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Detailed Roadmap</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Digital Training Companion</li>
+                        <ul
+                            style="margin-bottom: 3rem; opacity: 0.8; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem;">
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> In-home
+                                Behavioral Audit</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 90-minute
+                                session</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Detailed
+                                Roadmap</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Digital
+                                Training Companion</li>
                         </ul>
                         <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">Book Audit</button>
                     </div>
                     <!-- Popular Plan -->
-                    <div class="card reveal" style="text-align: center; border-color: var(--primary); background: var(--secondary); color: white; padding-top: 4rem; position: relative;">
-                        <span style="background: var(--primary); color: white; padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.8rem; font-weight: 800; position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%);">Most Popular</span>
+                    <div class="card reveal"
+                        style="text-align: center; border-color: var(--primary); background: var(--secondary); color: white; padding-top: 4rem; position: relative;">
+                        <span
+                            style="background: var(--primary); color: white; padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.8rem; font-weight: 800; position: absolute; top: 1.5rem; left: 50%; transform: translateX(-50%);">Most
+                            Popular</span>
                         <span style="opacity: 0.7; font-weight: 700; text-transform: uppercase;">Premium Growth</span>
                         <h2 style="margin: 1.5rem 0; color: white;">$599</h2>
-                        <ul style="margin-bottom: 4rem; opacity: 0.9; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem; color: white;">
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 4 Intensive In-home visits</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Full Dashboard access</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Personalized Video Review</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Priority Scheduling</li>
+                        <ul
+                            style="margin-bottom: 4rem; opacity: 0.9; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem; color: white;">
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 4 Intensive
+                                In-home visits</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Full
+                                Dashboard access</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i>
+                                Personalized Video Review</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Priority
+                                Scheduling</li>
                         </ul>
-                        <button class="btn btn-primary" style="width: 100%; padding: 1.25rem; margin-top: auto;">Start Training</button>
+                        <button class="btn btn-primary" style="width: 100%; padding: 1.25rem; margin-top: auto;">Start
+                            Training</button>
                     </div>
                     <div class="card reveal-right" style="text-align: center; padding-top: 3rem;">
                         <span style="opacity: 0.5; font-weight: 700; text-transform: uppercase;">Elite Mastery</span>
                         <h2 style="margin: 1.5rem 0;">$999</h2>
-                        <ul style="margin-bottom: 3rem; opacity: 0.8; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem;">
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 8 Intensive In-home visits</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Lifetime Support Group</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Custom Equipment Set</li>
-                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Advanced Desensitization</li>
+                        <ul
+                            style="margin-bottom: 3rem; opacity: 0.8; display: flex; flex-direction: column; align-items: flex-start; width: max-content; margin-left: auto; margin-right: auto; gap: 1rem;">
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> 8 Intensive
+                                In-home visits</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Lifetime
+                                Support Group</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Custom
+                                Equipment Set</li>
+                            <li style="white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;"><i
+                                    data-lucide="check" style="color: var(--primary); min-width: 18px;"></i> Advanced
+                                Desensitization</li>
                         </ul>
-                        <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">Master Enrollment</button>
+                        <button class="btn btn-secondary" style="width: 100%; margin-top: auto;">Master
+                            Enrollment</button>
                     </div>
                 </div>
             </div>
@@ -108,25 +151,31 @@
                     <h2 style="margin-bottom: 4rem;">How to Begin Your Journey</h2>
                     <div class="grid-3" style="gap: 3rem;">
                         <div class="card" style="text-align: center; padding: 3rem 2rem;">
-                            <div style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
+                            <div
+                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
                                 <i data-lucide="clipboard-list" style="width: 40px; height: 40px;"></i>
                             </div>
                             <h3 style="margin-bottom: 1rem;">Pick Plan</h3>
-                            <p style="opacity: 0.7; font-size: 0.95rem;">Select the roadmap that aligns with your dog's specific needs.</p>
+                            <p style="opacity: 0.7; font-size: 0.95rem;">Select the roadmap that aligns with your dog's
+                                specific needs.</p>
                         </div>
                         <div class="card" style="text-align: center; padding: 3rem 2rem;">
-                            <div style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
+                            <div
+                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
                                 <i data-lucide="shield-check" style="width: 40px; height: 40px;"></i>
                             </div>
                             <h3 style="margin-bottom: 1rem;">Secure Payment</h3>
-                            <p style="opacity: 0.7; font-size: 0.95rem;">Encrypted processing via our high-fidelity member portal.</p>
+                            <p style="opacity: 0.7; font-size: 0.95rem;">Encrypted processing via our high-fidelity
+                                member portal.</p>
                         </div>
                         <div class="card" style="text-align: center; padding: 3rem 2rem;">
-                            <div style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
+                            <div
+                                style="background: var(--bg); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--primary);">
                                 <i data-lucide="home" style="width: 40px; height: 40px;"></i>
                             </div>
                             <h3 style="margin-bottom: 1rem;">First Visit</h3>
-                            <p style="opacity: 0.7; font-size: 0.95rem;">Our training experts arrive at your door to begin the transformation.</p>
+                            <p style="opacity: 0.7; font-size: 0.95rem;">Our training experts arrive at your door to
+                                begin the transformation.</p>
                         </div>
                     </div>
                 </div>
@@ -137,55 +186,73 @@
         <section style="background: var(--bg);">
             <div class="container">
                 <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
-                    <span style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Common Questions</span>
+                    <span
+                        style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Common
+                        Questions</span>
                     <h2 style="margin-top: 1rem;">Everything You Need to Know</h2>
                 </div>
-                
+
                 <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
-                    <div class="faq-item" style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
-                        <button class="faq-trigger" style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 700; font-size: 1.1rem; text-align: left;">
+                    <div class="faq-item"
+                        style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <button class="faq-trigger"
+                            style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 700; font-size: 1.1rem; text-align: left;">
                             <span>What is included in the in-home behavioral audit?</span>
                             <i data-lucide="chevron-down" class="faq-icon" style="transition: transform 0.3s ease;"></i>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
                             <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8;">
-                                Our 90-minute audit includes a comprehensive behavioral assessment, environmental setup review, and a personalized roadmap detailing exactly how we'll bridge the gap between your dog's current state and your training goals.
+                                Our 90-minute audit includes a comprehensive behavioral assessment, environmental setup
+                                review, and a personalized roadmap detailing exactly how we'll bridge the gap between
+                                your dog's current state and your training goals.
                             </div>
                         </div>
                     </div>
 
-                    <div class="faq-item" style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
-                        <button class="faq-trigger" style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 700; font-size: 1.1rem; text-align: left;">
+                    <div class="faq-item"
+                        style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <button class="faq-trigger"
+                            style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 700; font-size: 1.1rem; text-align: left;">
                             <span>How long are the training sessions?</span>
                             <i data-lucide="chevron-down" class="faq-icon" style="transition: transform 0.3s ease;"></i>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
                             <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8;">
-                                Standard sessions are 60 minutes long. The initial evaluation is longer (90 minutes) to allow for a deep-dive behavioral analysis. We focus on efficiency ensure we the most out of every minute.
+                                Standard sessions are 60 minutes long. The initial evaluation is longer (90 minutes) to
+                                allow for a deep-dive behavioral analysis. We focus on efficiency ensure we the most out
+                                of every minute.
                             </div>
                         </div>
                     </div>
 
-                    <div class="faq-item" style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
-                        <button class="faq-trigger" style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 700; font-size: 1.1rem; text-align: left;">
+                    <div class="faq-item"
+                        style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <button class="faq-trigger"
+                            style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 700; font-size: 1.1rem; text-align: left;">
                             <span>Do you provide digital training support?</span>
                             <i data-lucide="chevron-down" class="faq-icon" style="transition: transform 0.3s ease;"></i>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
                             <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8;">
-                                Yes! Every client receives access to our Pawsome Portal, which includes video libraries, homework tracking, and direct messaging with your trainer for support between in-home visits.
+                                Yes! Every client receives access to our Pawsome Portal, which includes video libraries,
+                                homework tracking, and direct messaging with your trainer for support between in-home
+                                visits.
                             </div>
                         </div>
                     </div>
 
-                    <div class="faq-item" style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
-                        <button class="faq-trigger" style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 700; font-size: 1.1rem; text-align: left;">
+                    <div class="faq-item"
+                        style="background: var(--card-bg); border-radius: 16px; margin-bottom: 1.5rem; overflow: hidden; border: 1px solid var(--border);">
+                        <button class="faq-trigger"
+                            style="width: 100%; padding: 2rem; border: none; background: none; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: var(--text); font-weight: 700; font-size: 1.1rem; text-align: left;">
                             <span>What happens if I need to reschedule?</span>
                             <i data-lucide="chevron-down" class="faq-icon" style="transition: transform 0.3s ease;"></i>
                         </button>
                         <div class="faq-content" style="max-height: 0; overflow: hidden; transition: all 0.3s ease;">
                             <div style="padding: 0 2rem 2rem; opacity: 0.7; line-height: 1.8;">
-                                We understand life happens. You can reschedule any session with at least 48 hours' notice through your member portal. Within 48 hours, a small rescheduling fee may apply to respect our trainers' time.
+                                We understand life happens. You can reschedule any session with at least 48 hours'
+                                notice through your member portal. Within 48 hours, a small rescheduling fee may apply
+                                to respect our trainers' time.
                             </div>
                         </div>
                     </div>
@@ -194,12 +261,18 @@
         </section>
 
         <!-- Section 6: Premium CTA (Centered Stack) -->
-        <section style="background: linear-gradient(135deg, var(--bg-dark), var(--primary)); padding: 8rem 0; text-align: center; color: white;">
+        <section
+            style="background: linear-gradient(135deg, var(--bg-dark), var(--primary)); padding: 8rem 0; text-align: center; color: white;">
             <div class="container">
                 <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
-                    <h2 style="font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 2rem; color: white;">Ready to invest in your dog's future?</h2>
-                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3.5rem; line-height: 1.6;">Don't wait for behavioral issues to escalate. Start your journey toward a calmer, happier household today.</p>
-                    <a href="contact.html" class="btn btn-primary" style="padding: 1.5rem 4rem; font-size: 1.2rem; background: white; color: var(--secondary); border-radius: 50px; border: none; width: fit-content; margin: 0 auto;">Get Started Now</a>
+                    <h2
+                        style="font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.1; margin-bottom: 2rem; color: white;">
+                        Ready to invest in your dog's future?</h2>
+                    <p style="font-size: 1.25rem; opacity: 0.9; margin-bottom: 3.5rem; line-height: 1.6;">Don't wait for
+                        behavioral issues to escalate. Start your journey toward a calmer, happier household today.</p>
+                    <a href="contact.html" class="btn btn-primary"
+                        style="padding: 1.5rem 4rem; font-size: 1.2rem; background: white; color: var(--secondary); border-radius: 50px; border: none; width: fit-content; margin: 0 auto;">Get
+                        Started Now</a>
                 </div>
             </div>
         </section>
@@ -225,8 +298,8 @@
                 <div>
                     <h4 style="margin-bottom: 1.5rem;">Explore</h4>
                     <ul style="display: flex; flex-direction: column; gap: 0.75rem; opacity: 0.7;">
-                        <li><a href="index.html">Home 1</a></li>
-                        <li><a href="home-premium.html">Home 2</a></li>
+                        <li><a href="index.html#testimonials">Success Stories</a></li>
+                        <li><a href="programs.html">Elite Programs</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                     </ul>
@@ -262,4 +335,5 @@
 
     <script src="scripts/main.js"></script>
 </body>
+
 </html>
