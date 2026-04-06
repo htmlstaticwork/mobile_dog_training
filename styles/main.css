@@ -729,6 +729,10 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .grid-2,
     .grid-3 {
         gap: 2rem;
