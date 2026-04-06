@@ -11,7 +11,7 @@
     <style>
         :root {
             --dash-sidebar-w: 280px;
-            --dash-header-h: 80px;
+            --dash-header-h: 100px;
             --dash-bg: #f1f5f9;
         }
 
@@ -104,16 +104,23 @@
         }
 
         .dash-header {
-            height: var(--dash-header-h);
-            background: var(--card-bg);
-            border-bottom: 1px solid var(--border);
+            all: unset;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            height: var(--dash-header-h);
+            min-height: var(--dash-header-h);
+            max-height: var(--dash-header-h);
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
             padding: 0 3rem;
             position: sticky;
             top: 0;
             z-index: 1000;
+            color: var(--text);
+            box-sizing: border-box;
+            width: 100%;
+            flex-shrink: 0;
         }
 
         .content-area {
@@ -320,6 +327,13 @@
         }
 
         /* VIDEO GRID */
+        /* VIDEO PLAY BUTTON PULSE ANIMATION */
+        @keyframes pulse-ring {
+            0%   { transform: scale(1);    opacity: 0.6; }
+            70%  { transform: scale(1.8);  opacity: 0; }
+            100% { transform: scale(1.8);  opacity: 0; }
+        }
+
         .video-grid {
             display: flex;
             flex-wrap: wrap;
@@ -345,40 +359,69 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .video-thumb:hover {
+            transform: scale(1.02);
         }
 
         .video-thumb::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0, 0, 0, 0.3);
-            transition: background 0.3s;
+            background: rgba(0, 0, 0, 0.35);
+            transition: background 0.4s ease;
         }
 
         .video-thumb:hover::after {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.15);
         }
 
-        .video-thumb i {
+        /* Play button wrapper — real div so ::before pseudo-elements work */
+        .play-btn {
             position: relative;
             z-index: 10;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 62px;
+            height: 62px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(255, 255, 255, 0.45);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            color: white;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        background 0.3s ease,
+                        border-color 0.3s ease,
+                        box-shadow 0.3s ease;
         }
 
-        .video-thumb:hover i {
-            transform: scale(1.1);
+        /* Pulse ring */
+        .play-btn::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-thumb:hover .play-btn::before {
+            opacity: 1;
+            animation: pulse-ring 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .video-thumb:hover .play-btn {
+            transform: scale(1.25);
             background: var(--primary);
             border-color: var(--primary);
+            box-shadow: 0 0 0 10px rgba(217, 119, 6, 0.2),
+                        0 0 32px rgba(217, 119, 6, 0.55);
         }
+
 
         /* NO SCROLL OVERFLOW */
         * {
@@ -461,8 +504,7 @@
             <div class="content-area">
                 <!-- DASHBOARD (OVERVIEW) -->
                 <div id="overview" class="dash-section active">
-                    <h1 style="font-size: clamp(1.5rem, 5vw, 2.5rem); margin-bottom: 1rem;">Welcome back, Wolfgang! 👋
-                    </h1>
+                    <h2 style="margin-bottom: 2rem;">Welcome back, Wolfgang! 👋</h2>
                     <p style="opacity: 0.7; margin-bottom: 2rem;">Here's what's happening with your pack today.</p>
 
                     <div class="stat-grid">
@@ -630,8 +672,9 @@
                     <div class="video-grid">
                         <div class="dash-card" style="padding: 0; overflow: hidden;">
                             <div class="video-thumb"
-                                style="background-image: url('assets/training/thumb-obedience.png');"><i
-                                    data-lucide="play" style="width: 28px; height: 28px;"></i></div>
+                                style="background-image: url('assets/training/thumb-obedience.png');">
+                                <div class="play-btn"><i data-lucide="play" style="width: 28px; height: 28px;"></i></div>
+                            </div>
                             <div style="padding: 1.5rem;">
                                 <h4>Mastering the 'Sit'</h4>
                                 <p style="opacity: 0.6; font-size: 0.85rem; margin-top: 0.5rem;">Basics • 12 mins</p>
@@ -639,7 +682,7 @@
                         </div>
                         <div class="dash-card" style="padding: 0; overflow: hidden;">
                             <div class="video-thumb" style="background-image: url('assets/training/thumb-recall.png');">
-                                <i data-lucide="play" style="width: 28px; height: 28px;"></i>
+                                <div class="play-btn"><i data-lucide="play" style="width: 28px; height: 28px;"></i></div>
                             </div>
                             <div style="padding: 1.5rem;">
                                 <h4>Advanced Recall Training</h4>
@@ -649,7 +692,7 @@
                         </div>
                         <div class="dash-card" style="padding: 0; overflow: hidden;">
                             <div class="video-thumb" style="background-image: url('assets/training/thumb-leash.png');">
-                                <i data-lucide="lock" style="width: 28px; height: 28px; opacity: 0.8;"></i>
+                                <div class="play-btn"><i data-lucide="lock" style="width: 28px; height: 28px; opacity: 0.8;"></i></div>
                             </div>
                             <div style="padding: 1.5rem; opacity: 0.5;">
                                 <h4>Urban Leash Management</h4>

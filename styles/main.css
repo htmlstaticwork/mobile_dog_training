@@ -130,9 +130,9 @@ img {
 /* --- HEADER --- */
 header {
     height: var(--header-height);
-    background: transparent;
-    backdrop-filter: none;
-    border-bottom: 1px solid transparent;
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
     position: fixed;
     top: 0;
     left: 0;
@@ -141,8 +141,7 @@ header {
     display: flex;
     align-items: center;
     transition: var(--transition);
-    color: white;
-    /* Ensure readability on hero sections by default */
+    color: var(--text);
 }
 
 header.scrolled {
@@ -150,7 +149,6 @@ header.scrolled {
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
     color: var(--text);
-    /* Switch back to the theme's text color */
 }
 
 header.scrolled #mobile-menu-trigger {
