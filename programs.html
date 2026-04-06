@@ -25,35 +25,6 @@
         .animate-zoom-up {
             animation: zoomInUp 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
-
-        /* Programs grid: 2 cols at tablet to prevent button misalignment */
-        @media (max-width: 1100px) {
-            .programs-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .programs-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        /* Ensure CTA buttons always align to the bottom of each card */
-        .program-card-body {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            padding: 2.5rem;
-        }
-
-        .program-card-body p {
-            flex-grow: 1;
-        }
-
-        .program-card-body .btn {
-            margin-top: auto;
-        }
     </style>
 </head>
 
@@ -127,14 +98,14 @@
                         Curated Programs</span>
                     <h2 style="font-size: 3rem; margin-top: 1rem;">Choose Your Path</h2>
                 </div>
-                <div class="grid-3 programs-grid" style="gap: 2.5rem;">
+                <div class="grid-3" style="gap: 2.5rem;">
                     <!-- Puppy Training -->
                     <div class="card fade-in-up"
                         style="padding: 0; overflow: hidden; border-radius: 24px; transition: transform 0.4s ease, box-shadow 0.4s ease; border: 1px solid var(--border);">
                         <img src="https://images.pexels.com/photos/4060149/pexels-photo-4060149.jpeg?auto=compress&cs=tinysrgb&w=800"
                             alt="Puppy Training"
                             style="width: 100%; height: 250px; object-fit: cover; transition: transform 0.4s ease;">
-                        <div class="program-card-body">
+                        <div style="padding: 2.5rem;">
                             <h3 style="margin-bottom: 1rem;">Puppy Socialization</h3>
                             <p style="opacity: 0.7; margin-bottom: 2rem;">Build a strong foundation with early leash
                                 work, social skills, and potty training.</p>
@@ -146,7 +117,7 @@
                         style="padding: 0; overflow: hidden; border-radius: 24px; transition: transform 0.4s ease; border: 1px solid var(--border);">
                         <img src="https://images.pexels.com/photos/5966453/pexels-photo-5966453.jpeg?auto=compress&cs=tinysrgb&w=800"
                             alt="Obedience Training" style="width: 100%; height: 250px; object-fit: cover;">
-                        <div class="program-card-body">
+                        <div style="padding: 2.5rem;">
                             <h3 style="margin-bottom: 1rem;">Advanced Obedience</h3>
                             <p style="opacity: 0.7; margin-bottom: 2rem;">Master off-leash control, recall, and
                                 reliability under any distraction level.</p>
@@ -158,7 +129,7 @@
                         style="padding: 0; overflow: hidden; border-radius: 24px; transition: transform 0.4s ease; border: 1px solid var(--border);">
                         <img src="https://images.pexels.com/photos/7210748/pexels-photo-7210748.jpeg?auto=compress&cs=tinysrgb&w=800"
                             alt="Behavior Correction" style="width: 100%; height: 250px; object-fit: cover;">
-                        <div class="program-card-body">
+                        <div style="padding: 2.5rem;">
                             <h3 style="margin-bottom: 1rem;">Behavior Correction</h3>
                             <p style="opacity: 0.7; margin-bottom: 2rem;">Solving separation anxiety, excessive barking,
                                 and destructive chewing.</p>
@@ -170,7 +141,7 @@
                         style="padding: 0; overflow: hidden; border-radius: 24px; transition: transform 0.4s ease; border: 1px solid var(--border);">
                         <img src="https://images.pexels.com/photos/15322829/pexels-photo-15322829.jpeg"
                             alt="Aggression Control" style="width: 100%; height: 250px; object-fit: cover;">
-                        <div class="program-card-body">
+                        <div style="padding: 2.5rem;">
                             <h3 style="margin-bottom: 1rem;">Aggression Control</h3>
                             <p style="opacity: 0.7; margin-bottom: 2rem;">Safe management and rehabilitation for leash
                                 reactivity and guarding.</p>
@@ -182,7 +153,7 @@
                         style="padding: 0; overflow: hidden; border-radius: 24px; transition: transform 0.4s ease; border: 1px solid var(--border);">
                         <img src="https://images.pexels.com/photos/4588047/pexels-photo-4588047.jpeg?auto=compress&cs=tinysrgb&w=800"
                             alt="In-Home Harmony" style="width: 100%; height: 250px; object-fit: cover;">
-                        <div class="program-card-body">
+                        <div style="padding: 2.5rem;">
                             <h3 style="margin-bottom: 1rem;">In-Home Harmony</h3>
                             <p style="opacity: 0.7; margin-bottom: 2rem;">Custom training for multiple-dog households
                                 and household manners.</p>
@@ -194,7 +165,7 @@
                         style="padding: 0; overflow: hidden; border-radius: 24px; transition: transform 0.4s ease; border: 1px solid var(--border);">
                         <img src="https://images.pexels.com/photos/20234981/pexels-photo-20234981.jpeg"
                             alt="Elite Socialization" style="width: 100%; height: 250px; object-fit: cover;">
-                        <div class="program-card-body">
+                        <div style="padding: 2.5rem;">
                             <h3 style="margin-bottom: 1rem;">Elite Socialization</h3>
                             <p style="opacity: 0.7; margin-bottom: 2rem;">Focused exposure sessions to ensure your dog
                                 remains calm and confident.</p>
