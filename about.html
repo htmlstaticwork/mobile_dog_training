@@ -34,18 +34,19 @@
                         style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i
                             data-lucide="moon"></i> Theme</button>
                     <button id="rtl-toggle-mob" class="btn"
-                        style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i
-                            data-lucide="languages"></i> RTL</button>
+                        style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;">RTL</button>
                 </div>
 
                 <a href="login.html" class="btn btn-primary mobile-show"
                     style="margin-top: 1rem; color: white; text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="btn mobile-hide"
-                    style="background: none; color: inherit; padding: 0.5rem;"><i data-lucide="moon"></i></button>
-                <button id="rtl-toggle" class="btn mobile-hide"
-                    style="background: none; color: inherit; padding: 0.5rem;"><i data-lucide="languages"></i></button>
+                <button id="theme-toggle" class="btn-nav-utility mobile-hide" title="Change Theme">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button id="rtl-toggle" class="btn-nav-utility mobile-hide" title="Switch Direction">
+                    <span>RTL</span>
+                </button>
                 <button id="mobile-menu-trigger"
                     style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
                     <i data-lucide="menu"></i>
@@ -71,9 +72,9 @@
         <section>
             <div class="container">
                 <div class="grid-resp-2">
-                    <div class="reveal-left" style="display: flex; justify-content: center;">
+                    <div class="reveal-zoom" style="display: flex; justify-content: center;">
                         <img src="assets/images/about-values.png" alt="Core Values"
-                            style="border-radius: 24px; box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0 var(--primary); width: 100%; max-width: 350px; height: auto;">
+                            style="border-radius: 24px; box-shadow: 0 40px 80px rgba(0,0,0,0.15); width: 100%; max-width: 350px; height: auto;">
                     </div>
                     <div class="reveal-right">
                         <span
@@ -102,7 +103,7 @@
         <!-- Section 3: Pillars of Excellence -->
         <section style="background: var(--card-bg);">
             <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
+                <div class="reveal-up" style="text-align: center; margin-bottom: 6rem;">
                     <span
                         style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Our
                         Foundation</span>
@@ -110,7 +111,7 @@
                     <p style="opacity: 0.7; max-width: 600px; margin: 1rem auto 0;">Rooted in science, executed with
                         love. Our three pillars of training excellence define every interaction.</p>
                 </div>
-                <div class="grid-3" style="align-items: stretch;">
+                <div class="grid-3 stagger-container" style="align-items: stretch;">
                     <div class="card reveal-left" style="text-align: center; padding: 2.5rem;">
                         <div class="card-img-wrapper">
                             <img src="https://images.pexels.com/photos/191353/pexels-photo-191353.jpeg"
@@ -120,7 +121,7 @@
                         <p style="opacity: 0.8; line-height: 1.7;">Compassion first in every session, building a bond
                             beyond simple obedience and creating lasting trust.</p>
                     </div>
-                    <div class="card reveal" style="text-align: center; padding: 2.5rem;">
+                    <div class="card blur-in" style="text-align: center; padding: 2.5rem;">
                         <div class="card-img-wrapper">
                             <img src="https://images.pexels.com/photos/8499441/pexels-photo-8499441.jpeg" alt="Science">
                         </div>
@@ -141,11 +142,11 @@
             </div>
         </section>
 
-        <!-- Section 4: Team -->
-        <section>
+        <!-- Section 4: Team (REVERSED) -->
+        <section style="background: var(--bg);">
             <div class="container">
-                <div class="grid-resp-2">
-                    <div class="reveal-left">
+                <div class="grid-resp-2 grid-reverse">
+                    <div class="reveal-up">
                         <span
                             style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">The
                             Core Team</span>
@@ -166,10 +167,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="reveal-right" style="display: flex; justify-content: center;">
+                    <div class="reveal-zoom" style="display: flex; justify-content: center;">
                         <img src="https://images.pexels.com/photos/8327660/pexels-photo-8327660.jpeg"
                             alt="Team Collaboration"
-                            style="border-radius: 24px; box-shadow: clamp(-20px, -2vw, -10px) clamp(10px, 2vw, 20px) 0 var(--secondary); width: 100%; max-width: 350px; height: auto;">
+                            style="border-radius: 24px; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.25); width: 100%; max-width: 350px; height: auto;">
                     </div>
                 </div>
             </div>
@@ -178,13 +179,13 @@
         <!-- Section 5: Timeline/Journey -->
         <section style="background: var(--bg);">
             <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
+                <div class="blur-in" style="text-align: center; margin-bottom: 6rem;">
                     <span
                         style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Milestones</span>
                     <h2 style="margin-top: 1rem;">The Pawsome Journey</h2>
                     <p style="opacity: 0.7; margin-top: 1rem;">A decade of growth and dedication to canine welfare.</p>
                 </div>
-                <div class="grid-4" style="text-align: center;">
+                <div class="grid-4 stagger-container" style="text-align: center;">
                     <div class="reveal-left">
                         <h1 style="color: var(--primary); font-size: 3rem;">2011</h1>
                         <p style="font-weight: 800; margin-bottom: 1rem;">Founded</p>

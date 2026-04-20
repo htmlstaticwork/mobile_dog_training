@@ -12,11 +12,11 @@
         :root {
             --dash-sidebar-w: 280px;
             --dash-header-h: 100px;
-            --dash-bg: #f1f5f9;
+            --dash-bg: var(--slate-light);
         }
 
         body[data-theme="dark"] {
-            --dash-bg: #0f172a;
+            --dash-bg: #000000;
         }
 
         .dashboard-container {
@@ -79,13 +79,13 @@
 
         .nav-item:hover,
         .nav-item.active {
-            background: rgba(217, 119, 6, 0.1);
+            background: rgba(var(--primary-rgb), 0.1);
             color: var(--primary);
         }
 
         .nav-item.logout {
             margin-top: auto;
-            color: #ef4444;
+            color: var(--error);
             border-top: 1px solid var(--border);
             padding-top: 2rem;
             border-radius: 0;
@@ -483,18 +483,18 @@
                 </div>
                 <div class="header-right"
                     style="display: flex; align-items: center; gap: clamp(0.5rem, 2vw, 1.5rem); flex-shrink: 0;">
-                    <button id="rtl-toggle" class="btn toggle-btn"
-                        style="background:none; color:var(--text); padding:0.4rem; border:1px solid var(--border); border-radius:50%; display:flex; align-items:center; justify-content:center;"><i
-                            data-lucide="languages" style="width:18px; height:18px;"></i></button>
-                    <button id="theme-toggle" class="btn toggle-btn"
-                        style="background:none; color:var(--text); padding:0.4rem; border:1px solid var(--border); border-radius:50%; display:flex; align-items:center; justify-content:center;"><i
-                            data-lucide="moon" style="width:18px; height:18px;"></i></button>
+                    <button id="theme-toggle" class="btn-nav-utility" title="Change Theme">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button id="rtl-toggle" class="btn-nav-utility" title="Switch Direction">
+                        <span>RTL</span>
+                    </button>
                     <div style="display: flex; align-items: center; gap: 0.5rem;">
                         <div class="avatar"
-                            style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0;">
+                            style="width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem; flex-shrink: 0;">
                             W</div>
                         <div class="user-info" style="text-align: left;">
-                            <p style="font-weight: 700; font-size: 0.85rem; white-space: nowrap;">Wolfgang M.</p>
+                            <p style="font-weight: 600; font-size: 0.85rem; white-space: nowrap;">Wolfgang M.</p>
                             <p style="font-size: 0.65rem; opacity: 0.6; white-space: nowrap;">Premium Member</p>
                         </div>
                     </div>
@@ -511,13 +511,13 @@
                         <div class="dash-card">
                             <i data-lucide="calendar-check" style="color:var(--primary); margin-bottom: 1rem;"></i>
                             <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Next Session</h4>
-                            <p style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">April 18, 2026</p>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">April 18, 2026</p>
                             <span style="color: var(--primary); font-size: 0.8rem;">At 10:00 AM</span>
                         </div>
                         <div class="dash-card">
                             <i data-lucide="trending-up" style="color:var(--primary); margin-bottom: 1rem;"></i>
                             <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Command Mastery</h4>
-                            <p style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">85% Completed</p>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">85% Completed</p>
                             <div
                                 style="width:100%; height:6px; background:var(--border); border-radius:3px; margin-top:0.5rem;">
                                 <div style="width:85%; height:100%; background:var(--primary); border-radius:3px;">
@@ -527,8 +527,8 @@
                         <div class="dash-card">
                             <i data-lucide="check-square" style="color:var(--primary); margin-bottom: 1rem;"></i>
                             <h4 style="opacity: 0.6; font-size: 0.8rem; text-transform: uppercase;">Homework Tasks</h4>
-                            <p style="font-size: 1.25rem; font-weight: 700; margin: 0.5rem 0;">3 Pending</p>
-                            <span style="color: #ef4444; font-size: 0.8rem;">Requires attention</span>
+                            <p style="font-size: 1.25rem; font-weight: 600; margin: 0.5rem 0;">3 Pending</p>
+                            <span style="color: var(--error); font-size: 0.8rem;">Requires attention</span>
                         </div>
                     </div>
 
@@ -605,9 +605,9 @@
                                 </p>
                             </div>
                             <div style="text-align: right;">
-                                <p style="font-weight: 700; color: var(--primary);">April 18, 10:00 AM</p>
+                                <p style="font-weight: 600; color: var(--primary);">April 18, 10:00 AM</p>
                                 <span
-                                    style="background: #dcfce7; color: #166534; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; display: inline-block; margin-top: 0.25rem;">CONFIRMED</span>
+                                    style="background: var(--success-light); color: var(--success-dark); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-top: 0.25rem;">CONFIRMED</span>
                             </div>
                         </div>
                         <div class="dash-card session-card"
@@ -620,9 +620,9 @@
                                 </p>
                             </div>
                             <div style="text-align: right;">
-                                <p style="font-weight: 700; opacity: 0.5;">May 02, 11:30 AM</p>
+                                <p style="font-weight: 600; opacity: 0.5;">May 02, 11:30 AM</p>
                                 <span
-                                    style="background: #f1f5f9; color: #64748b; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 800; display: inline-block; margin-top: 0.25rem;">PENDING</span>
+                                    style="background: var(--slate-light); color: var(--slate); padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600; display: inline-block; margin-top: 0.25rem;">PENDING</span>
                             </div>
                         </div>
                     </div>
@@ -648,11 +648,11 @@
                             <ul style="display: flex; flex-direction: column; gap: 1rem;">
                                 <li style="display: flex; justify-content: space-between; align-items: center;">
                                     <span>Heel Position</span> <i data-lucide="check-circle"
-                                        style="color: #22c55e;"></i>
+                                        style="color: var(--success);"></i>
                                 </li>
                                 <li style="display: flex; justify-content: space-between; align-items: center;">
                                     <span>Place Command</span> <i data-lucide="check-circle"
-                                        style="color: #22c55e;"></i>
+                                        style="color: var(--success);"></i>
                                 </li>
                                 <li style="display: flex; justify-content: space-between; align-items: center;">
                                     <span>Duration Stay</span> <i data-lucide="clock"
@@ -729,13 +729,13 @@
                 <div id="notes" class="dash-section">
                     <h2 style="margin-bottom: 2rem;">Lead Trainer Notes</h2>
                     <div class="dash-card"
-                        style="background: rgba(217, 119, 6, 0.05); border-left: 8px solid var(--primary);">
+                        style="background: rgba(var(--primary-rgb), 0.05); border-left: 8px solid var(--primary);">
                         <p style="font-style: italic; font-size: 1.1rem; line-height: 1.8; opacity: 0.8;">"Wolf is
                             making exceptional progress with the 'Place' command. He is beginning to settle much faster.
                             Please ensure you are rewarding the calm settle, not just the action of getting on the bed.
                             Keep up the high-value salmon treats for the recall practice—it's clearly his favorite
                             motivator!"</p>
-                        <p style="margin-top: 2rem; font-weight: 800;">- Alex Paws, Head Specialist</p>
+                        <p style="margin-top: 2rem; font-weight: 600;">- Alex Paws, Head Specialist</p>
                         <p style="font-size: 0.8rem; opacity: 0.5;">Sent April 12, 2026</p>
                     </div>
                 </div>
@@ -745,20 +745,20 @@
                     <h2 style="margin-bottom: 2rem;">Your Notifications</h2>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
                         <div
-                            style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid #3b82f6; display: flex; gap: 1rem; align-items: flex-start;">
-                            <i data-lucide="info" style="color: #3b82f6; margin-top: 0.25rem;"></i>
+                            style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid var(--info); display: flex; gap: 1rem; align-items: flex-start;">
+                            <i data-lucide="info" style="color: var(--info); margin-top: 0.25rem;"></i>
                             <div>
-                                <p style="font-weight: 700;">New Training Guide Available</p>
+                                <p style="font-weight: 600;">New Training Guide Available</p>
                                 <p style="opacity: 0.7; font-size: 0.9rem;">"How to handle rainy day exercise" has been
                                     added to the library.</p>
                                 <span style="font-size: 0.7rem; opacity: 0.5;">2 hours ago</span>
                             </div>
                         </div>
                         <div
-                            style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid #22c55e; display: flex; gap: 1rem; align-items: flex-start;">
-                            <i data-lucide="check-circle" style="color: #22c55e; margin-top: 0.25rem;"></i>
+                            style="background: var(--card-bg); padding: 1.5rem; border-radius: 16px; border-left: 4px solid var(--success); display: flex; gap: 1rem; align-items: flex-start;">
+                            <i data-lucide="check-circle" style="color: var(--success); margin-top: 0.25rem;"></i>
                             <div>
-                                <p style="font-weight: 700;">Session Confirmed</p>
+                                <p style="font-weight: 600;">Session Confirmed</p>
                                 <p style="opacity: 0.7; font-size: 0.9rem;">Your session on April 18 at 10 AM is now
                                     confirmed.</p>
                                 <span style="font-size: 0.7rem; opacity: 0.5;">Yesterday</span>

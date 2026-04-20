@@ -8,8 +8,24 @@
     /* Midnight Navy */
 
     /* Semantic Colors */
+    --success: #10B981;
+    --success-light: #DCFCE7;
+    --success-dark: #065F46;
+    --error: #EF4444;
+    --error-light: #FEE2E2;
+    --error-dark: #991B1B;
+    --info: #3B82F6;
+    --info-light: #DBEAFE;
+    --info-dark: #1E40AF;
+    --warning: #F59E0B;
+    --warning-light: #FEF3C7;
+    --warning-dark: #92400E;
+    --slate: #64748B;
+    --slate-light: #F1F5F9;
+    --primary-rgb: 217, 119, 6;
+    --secondary-rgb: 30, 41, 59;
     --bg-light: #FFFFFF;
-    --bg-dark: #0F172A;
+    --bg-dark: #000000;
     --white: #FFFFFF;
     --footer-bg: #F8FAFC;
     --footer-text: #1E293B;
@@ -34,14 +50,14 @@
 }
 
 [data-theme="dark"] {
-    --bg: #0F172A;
-    --card-bg: #1E293B;
+    --bg: #000000;
+    --card-bg: #111111;
     --text: #F8FAFC;
-    --border: #475569;
+    --border: #1e293b;
     --white: #FFFFFF;
-    --footer-bg: #020617;
+    --footer-bg: #000000;
     --footer-text: #F8FAFC;
-    --glass: rgba(15, 23, 42, 0.8);
+    --glass: rgba(0, 0, 0, 0.85);
 }
 
 * {
@@ -56,8 +72,13 @@ html {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    font-weight: 400;
     transition: var(--transition);
     overflow-x: hidden;
+}
+
+p {
+    font-weight: 400;
 }
 
 h1,
@@ -67,7 +88,7 @@ h4,
 h5,
 h6 {
     font-family: 'Outfit', sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -160,7 +181,7 @@ header.scrolled #mobile-menu-trigger {
     align-items: center;
     gap: 12px;
     font-size: 30px;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--primary);
     font-family: 'Outfit', sans-serif;
     line-height: 1;
@@ -255,7 +276,7 @@ header.scrolled #mobile-menu-trigger {
 /* --- ✨ Active State Highlight --- */
 .nav-links a.active {
     color: var(--primary);
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .nav-links a.active::after {
@@ -385,7 +406,7 @@ header.scrolled #mobile-menu-trigger {
 footer {
     background: var(--footer-bg);
     color: var(--footer-text);
-    padding: 8rem 0 3rem;
+    padding: 4rem 0 3rem;
     border-top: 1px solid var(--border);
 }
 
@@ -451,20 +472,35 @@ footer a:hover {
     background: var(--card-bg);
     border: 1px solid var(--border);
     padding: 2.5rem;
-    border-radius: 20px;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-radius: 24px;
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.6s ease, 
+                border-color 0.4s ease;
     position: relative;
     overflow: hidden;
     height: 100%;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-16px) scale(1.02);
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
     border-color: var(--primary);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
 }
 
 .card-img-wrapper {
@@ -501,7 +537,7 @@ footer a:hover {
 .card-cta {
     margin-top: auto;
     color: var(--primary);
-    font-weight: 700;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 0.6rem;
@@ -571,27 +607,31 @@ svg.lucide-star {
 .btn-primary {
     background: var(--primary);
     color: white;
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
 }
 
 .btn-primary:hover {
     background: var(--secondary);
-    transform: scale(1.05) !important;
+    transform: translateY(-3px) scale(1.02) !important;
+    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.4);
 }
 
 .btn-secondary {
     background: var(--secondary);
     color: white;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
     background: var(--primary);
-    transform: scale(1.05);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 /* Dark Mode Button Fixes */
 [data-theme="dark"] .btn-primary {
-    background: var(--primary) !important;
-    color: white !important;
+    background: var(--primary);
+    color: white;
     box-shadow: 0 10px 30px rgba(217, 119, 6, 0.4);
 }
 
@@ -607,6 +647,40 @@ svg.lucide-star {
 }
 
 /* Theme & RTL Toggle Hover States */
+.btn-nav-utility {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-nav-utility:hover {
+    background: var(--primary) !important;
+    color: white !important;
+    border-color: var(--primary) !important;
+    transform: translateY(-2px);
+}
+
+.btn-nav-utility i,
+.btn-nav-utility svg {
+    width: 18px !important;
+    height: 18px !important;
+    color: inherit !important;
+    stroke: currentColor;
+}
+
 #theme-toggle:hover,
 #rtl-toggle:hover,
 #theme-toggle-mob:hover,
@@ -615,18 +689,6 @@ svg.lucide-star {
     color: white !important;
     border-color: var(--primary) !important;
     transform: scale(1.08);
-}
-
-#theme-toggle:hover i,
-#theme-toggle:hover svg,
-#rtl-toggle:hover i,
-#rtl-toggle:hover svg,
-#theme-toggle-mob:hover i,
-#theme-toggle-mob:hover svg,
-#rtl-toggle-mob:hover i,
-#rtl-toggle-mob:hover svg {
-    color: white !important;
-    stroke: white;
 }
 
 /* --- SECTIONS --- */
@@ -660,33 +722,44 @@ section {
 .reveal,
 .reveal-left,
 .reveal-right,
-.reveal-zoom {
+.reveal-zoom,
+.reveal-up,
+.blur-in {
     opacity: 0;
-    transition: all 1s ease-out;
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
 }
 
-.reveal {
-    transform: translateY(50px);
-}
-
-.reveal-left {
-    transform: translateX(-80px);
-}
-
-.reveal-right {
-    transform: translateX(80px);
-}
-
-.reveal-zoom {
-    transform: scale(0.85);
-}
+.reveal, .reveal-up { transform: translateY(40px); }
+.reveal-left { transform: translateX(-60px); }
+.reveal-right { transform: translateX(60px); }
+.reveal-zoom { transform: scale(0.9) translateY(20px); }
+.blur-in { filter: blur(10px); transform: scale(0.95); }
 
 .reveal.active,
+.reveal-up.active,
 .reveal-left.active,
 .reveal-right.active,
-.reveal-zoom.active {
+.reveal-zoom.active,
+.blur-in.active {
     opacity: 1;
     transform: translate(0) scale(1);
+    filter: blur(0);
+}
+
+/* Staggered Delay Utilities */
+.stagger-container > *.active:nth-child(1) { transition-delay: 0.1s; }
+.stagger-container > *.active:nth-child(2) { transition-delay: 0.2s; }
+.stagger-container > *.active:nth-child(3) { transition-delay: 0.3s; }
+.stagger-container > *.active:nth-child(4) { transition-delay: 0.4s; }
+.stagger-container > *.active:nth-child(5) { transition-delay: 0.5s; }
+
+/* Micro Interaction: Icon Hover */
+[data-lucide]:hover, 
+svg.lucide:hover {
+    transform: scale(1.2) rotate(10deg);
+    color: var(--primary);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* --- CARDS & GRID --- */
@@ -721,6 +794,20 @@ section {
     .grid-resp-2 {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+}
+
+.grid-reverse {
+    direction: rtl;
+}
+
+.grid-reverse > * {
+    direction: ltr;
+}
+
+@media (max-width: 768px) {
+    .grid-reverse {
+        direction: ltr;
     }
 }
 
@@ -812,6 +899,28 @@ section {
     justify-content: center;
     padding: 2rem 1rem;
     background: linear-gradient(135deg, var(--bg-dark), var(--primary));
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .auth-wrapper {
+    background: #000000;
+}
+
+.auth-floating-toggles {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 0.75rem;
+    z-index: 100;
+}
+
+@media (max-width: 768px) {
+    .auth-floating-toggles {
+        top: 1rem;
+        right: 1rem;
+    }
 }
 
 .auth-card {
@@ -839,7 +948,7 @@ section {
 
 .auth-card a:not(.logo-brand) {
     color: var(--primary);
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
 }

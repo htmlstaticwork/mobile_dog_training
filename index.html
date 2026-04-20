@@ -29,27 +29,28 @@
                 <a href="services.html">Services</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="contact.html">Contact</a>
-                <a href="dashboard.html" style="font-weight: 700;">Dashboard</a>
+                <a href="dashboard.html" style="font-weight: 600;">Dashboard</a>
                 <!-- Toggles inside menu for mobile ONLY -->
                 <div class="mobile-show" style="gap: 1.5rem; margin-top: 1rem; margin-bottom: 2rem;">
                     <button id="theme-toggle-mob" class="btn"
                         style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i
                             data-lucide="moon"></i> Theme</button>
                     <button id="rtl-toggle-mob" class="btn"
-                        style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i
-                            data-lucide="languages"></i> RTL</button>
+                        style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;">RTL</button>
                 </div>
 
                 <a href="login.html" class="btn btn-primary mobile-show"
                     style="margin-top: 1rem; color: white; text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="btn mobile-hide"
-                    style="background: none; color: inherit; padding: 0.5rem;"><i data-lucide="moon"></i></button>
-                <button id="rtl-toggle" class="btn mobile-hide"
-                    style="background: none; color: inherit; padding: 0.5rem;"><i data-lucide="languages"></i></button>
+                <button id="theme-toggle" class="btn-nav-utility mobile-hide" title="Change Theme">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button id="rtl-toggle" class="btn-nav-utility mobile-hide" title="Switch Direction">
+                    <span>RTL</span>
+                </button>
                 <button id="mobile-menu-trigger"
-                    style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
+                    style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem; display: flex; align-items: center; justify-content: center;">
                     <i data-lucide="menu"></i>
                 </button>
                 <a href="login.html" class="btn btn-secondary mobile-hide">Login</a>
@@ -81,11 +82,11 @@
         <!-- Section 2: Features -->
         <section>
             <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
-                    <h2 style="margin-bottom: 1rem;">Why Choose Pawsome?</h2>
-                    <p style="opacity: 0.7;">The highest standard in modern canine education.</p>
+                <div class="reveal-up" style="text-align: center; margin-bottom: 5rem;">
+                    <h2 style="margin-bottom: 1.5rem;">Why Pawsome Experts?</h2>
+                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8;">We set the gold standard for in-home canine behavioral science.</p>
                 </div>
-                <div class="grid-3">
+                <div class="grid-3 stagger-container">
                     <div class="card reveal-left">
                         <div class="card-img-wrapper">
                             <img src="https://images.pexels.com/photos/28536059/pexels-photo-28536059.jpeg"
@@ -123,16 +124,16 @@
         <section style="background: var(--card-bg);">
             <div class="container">
                 <div class="grid-resp-2">
-                    <div class="reveal-left" style="display: flex; justify-content: center;">
+                    <div class="reveal-zoom" style="display: flex; justify-content: center;">
                         <img src="assets/images/how-it-works.png" alt="Training Process"
-                            style="border-radius: 24px; box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0 var(--primary); max-width: 75%; height: auto; object-fit: cover;">
+                            style="border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); max-width: 75%; height: auto; object-fit: cover;">
                     </div>
                     <div class="reveal-right">
                         <h2 style="margin-bottom: 2rem;">A Simple Path to a Better Dog</h2>
                         <div style="margin-bottom: 2.5rem;">
                             <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
                                 <div
-                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
                                     1</div>
                                 <div>
                                     <h4 style="font-size: 1.2rem;">Initial Assessment</h4>
@@ -142,7 +143,7 @@
                             </div>
                             <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
                                 <div
-                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
                                     2</div>
                                 <div>
                                     <h4 style="font-size: 1.2rem;">In-Home Practice</h4>
@@ -152,7 +153,7 @@
                             </div>
                             <div style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem;">
                                 <div
-                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800;">
+                                    style="background: var(--primary); color: white; width: 40px; height: 40px; min-width: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">
                                     3</div>
                                 <div>
                                     <h4 style="font-size: 1.2rem;">Lasting Success</h4>
@@ -166,15 +167,15 @@
             </div>
         </section>
 
-        <!-- Section 4: Trainer Intro (IMAGE) -->
-        <section>
+        <!-- Section 4: Trainer Intro (IMAGE) - REVERSED LAYOUT -->
+        <section style="background: var(--card-bg);">
             <div class="container">
-                <div class="grid-resp-2">
+                <div class="grid-resp-2 grid-reverse">
                     <div class="reveal-left">
                         <span
-                            style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Meet
+                            style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px;">Meet
                             Your Expert</span>
-                        <h2 style="margin: 1rem 0 2.5rem;">Expertise You Can Trust</h2>
+                        <h2 style="margin: 1.5rem 0 2.5rem;">Expertise You Can Trust</h2>
                         <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.8;">Our lead trainer, Alex Paws,
                             has over 15 years of experience in behavioral science and canine psychology. We focus on the
                             bond between human and animal, ensuring an enjoyable experience for everyone.</p>
@@ -191,9 +192,9 @@
                         <a href="about.html" class="btn btn-primary" style="padding: 1rem 3rem;">Learn More About
                             Alex</a>
                     </div>
-                    <div class="reveal-right" style="display: flex; justify-content: center;">
+                    <div class="blur-in" style="display: flex; justify-content: center;">
                         <img src="assets/images/trainer.png" alt="Professional Trainer"
-                            style="border-radius: 24px; border: 10px solid var(--card-bg); outline: 1px solid var(--border); max-width: 75%; height: auto; object-fit: cover;">
+                            style="border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 40px 80px -20px rgba(0,0,0,0.2); max-width: 85%; height: auto; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -202,11 +203,11 @@
         <!-- Section 5: Testimonials -->
         <section id="testimonials" style="background: var(--secondary); color: white;">
             <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
-                    <h2 style="color: white;">Heartwarming Success Stories</h2>
-                    <p style="opacity: 0.7;">Real families, real results.</p>
+                <div class="reveal-zoom" style="text-align: center; margin-bottom: 5rem;">
+                    <h2 style="color: white; margin-bottom: 1.5rem;">Heartwarming Success Stories</h2>
+                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8;">Real families, real results.</p>
                 </div>
-                <div class="grid-3">
+                <div class="grid-3 stagger-container">
                     <div class="reveal-zoom"
                         style="background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 24px; text-align: center;">
                         <img src="https://images.pexels.com/photos/1456642/pexels-photo-1456642.jpeg"
@@ -258,10 +259,10 @@
 
         <!-- Section 6: Banner (IMAGE BG) -->
         <section
-            style="padding: 10rem 0; background: linear-gradient(rgba(217, 119, 6, 0.9), rgba(217, 119, 6, 0.9)), url('assets/images/service-obedience.png') no-repeat center center/cover; position: relative;">
+            style="padding: 10rem 0; background: linear-gradient(rgba(var(--primary-rgb), 0.9), rgba(var(--primary-rgb), 0.9)), url('assets/images/service-obedience.png') no-repeat center center/cover; position: relative;">
             <div class="container" style="text-align: center; color: white;">
                 <div class="reveal-zoom">
-                    <h2 style="color: white; margin-bottom: 2rem; font-size: clamp(2rem, 8vw, 4rem);">Ready for a
+                    <h2 style="color: white; margin-bottom: 2rem;">Ready for a
                         Happier, Calmer Dog?</h2>
                     <p
                         style="font-size: 1.25rem; margin-bottom: 4rem; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto;">
@@ -278,7 +279,7 @@
     <div id="booking-popup" class="popup-overlay">
         <div class="popup-card">
             <button class="close-popup"
-                style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; cursor: pointer; color: #64748b;"><i
+                style="position: absolute; top: 1rem; right: 1rem; background: none; border: none; cursor: pointer; color: var(--slate);"><i
                     data-lucide="x"></i></button>
             <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Book Your Session</h3>
             <p style="opacity: 0.7; margin-bottom: 2rem;">Enter your details and our lead trainer will contact you for a

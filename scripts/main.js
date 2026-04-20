@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ✨ Scroll Animations
-    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom');
+    const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-up, .blur-in');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {

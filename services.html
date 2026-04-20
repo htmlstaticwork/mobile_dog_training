@@ -34,18 +34,19 @@
                         style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i
                             data-lucide="moon"></i> Theme</button>
                     <button id="rtl-toggle-mob" class="btn"
-                        style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;"><i
-                            data-lucide="languages"></i> RTL</button>
+                        style="background: none; color: inherit; padding: 0.75rem; border: 1px solid var(--border); border-radius: 12px; flex: 1;">RTL</button>
                 </div>
 
                 <a href="login.html" class="btn btn-primary mobile-show"
                     style="margin-top: 1rem; color: white; text-align: center;">Login</a>
             </nav>
             <div class="header-actions">
-                <button id="theme-toggle" class="btn mobile-hide"
-                    style="background: none; color: inherit; padding: 0.5rem;"><i data-lucide="moon"></i></button>
-                <button id="rtl-toggle" class="btn mobile-hide"
-                    style="background: none; color: inherit; padding: 0.5rem;"><i data-lucide="languages"></i></button>
+                <button id="theme-toggle" class="btn-nav-utility mobile-hide" title="Change Theme">
+                    <i data-lucide="moon"></i>
+                </button>
+                <button id="rtl-toggle" class="btn-nav-utility mobile-hide" title="Switch Direction">
+                    <span>RTL</span>
+                </button>
                 <button id="mobile-menu-trigger"
                     style="background: none; border: none; cursor: pointer; color: inherit; padding: 0.5rem;">
                     <i data-lucide="menu"></i>
@@ -76,7 +77,7 @@
                         Pawsome Spectrum</span>
                     <h2 style="margin-top: 1rem;">Solutions for Every Paw</h2>
                 </div>
-                <div class="grid-3">
+                <div class="grid-3 stagger-container">
                     <div class="card reveal-left">
                         <div class="card-img-wrapper"><img
                                 src="https://images.pexels.com/photos/34762918/pexels-photo-34762918.jpeg"
@@ -84,7 +85,7 @@
                         <h3>Puppy Foundations</h3>
                         <p>Critical socialization and foundation behaviors for dogs under 6 months old.</p>
                     </div>
-                    <div class="card reveal">
+                    <div class="card blur-in">
                         <div class="card-img-wrapper"><img
                                 src="https://images.pexels.com/photos/1174081/pexels-photo-1174081.jpeg"
                                 alt="Calm & Control"></div>
@@ -129,12 +130,11 @@
         <!-- Section 4: Comparison Table -->
         <section>
             <div class="container">
-                <div class="reveal" style="text-align: center; margin-bottom: 5rem;">
+                <div class="reveal" style="text-align: center; margin-bottom: 6rem;">
                     <span
                         style="color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Comparison</span>
                     <h2 style="margin-top: 1rem; margin-bottom: 1.5rem;">Choose Your Pathway</h2>
-                    <p style="opacity: 0.7; max-width: 600px; margin: 0 auto;">A transparent look at our premium
-                        pathways and what you can expect from each engagement.</p>
+                    <p style="font-weight: 500; font-size: 1.1rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">A transparent look at our premium pathways and what you can expect from each engagement.</p>
                 </div>
                 <div class="table-responsive" style="overflow-x: auto; padding: 1rem;">
                     <table
@@ -157,20 +157,20 @@
                             <tr style="border-bottom: 1px solid var(--border);">
                                 <td style="padding: 1.5rem 2rem; font-weight: 600;">Digital Portal</td>
                                 <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: #10b981;"></i></td>
+                                        style="color: var(--success);"></i></td>
                                 <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: #10b981;"></i></td>
+                                        style="color: var(--success);"></i></td>
                                 <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: #10b981;"></i></td>
+                                        style="color: var(--success);"></i></td>
                             </tr>
                             <tr style="border-bottom: 1px solid var(--border);">
                                 <td style="padding: 1.5rem 2rem; font-weight: 600;">Video Review</td>
                                 <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus"
                                         style="opacity: 0.3;"></i></td>
                                 <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: #10b981;"></i></td>
+                                        style="color: var(--success);"></i></td>
                                 <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: #10b981;"></i></td>
+                                        style="color: var(--success);"></i></td>
                             </tr>
                             <tr>
                                 <td style="padding: 1.5rem 2rem; font-weight: 600;">Priority Support</td>
@@ -179,14 +179,16 @@
                                 <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="minus"
                                         style="opacity: 0.3;"></i></td>
                                 <td style="padding: 1.5rem 2rem; text-align: center;"><i data-lucide="check"
-                                        style="color: #10b981;"></i></td>
+                                        style="color: var(--success);"></i></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            <!-- Section 5: Premium CTA (Centered Stack) -->
-            <section style="background: var(--primary); padding: 8rem 0; text-align: center; color: white;">
+        </section>
+
+        <!-- Section 5: Premium CTA (Centered Stack) -->
+        <section style="background: var(--primary); padding: 8rem 0; text-align: center; color: white;">
                 <div class="container">
                     <div class="reveal-zoom" style="max-width: 800px; margin: 0 auto;">
                         <h2
