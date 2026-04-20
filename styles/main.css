@@ -866,6 +866,7 @@ svg.lucide:hover {
     .card {
         padding: 2rem;
         flex-direction: column !important;
+        transform: scale(1) !important;
     }
 
     .card-img-wrapper {
@@ -880,7 +881,7 @@ svg.lucide:hover {
     }
 
     .card {
-        padding: 1.5rem !important;
+        padding: 1.5rem;
     }
 
     .card-img-wrapper {
