@@ -848,58 +848,35 @@ svg.lucide:hover {
 }
 
 @media (max-width: 1024px) {
-    .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .grid-3 > *:last-child:nth-child(odd) {
-        grid-column: span 2 !important;
-        justify-self: center !important;
-        width: calc(50% - 1rem) !important;
-        margin: 0 auto !important;
-    }
-
-    .grid-2,
-    .grid-3 {
-        gap: 2rem;
-    }
-
-    .card {
-        padding: 2rem;
-    }
-
-    .card-img-wrapper {
-        width: calc(100% + 4rem);
-        margin: -2rem -2rem 1.5rem -2rem;
-    }
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .grid-reverse {
-        direction: ltr;
-    }
-
     .grid-2,
     .grid-3,
     .grid-4,
     .grid-resp-2,
     .footer-grid {
         grid-template-columns: 1fr !important;
+        gap: 2rem;
     }
 
     .grid-3 > * {
         width: 100% !important;
         grid-column: span 1 !important;
         margin: 0 !important;
+    }
+
+    .card {
+        padding: 2rem;
+        flex-direction: column !important;
+    }
+
+    .card-img-wrapper {
+        width: calc(100% + 4rem) !important;
+        margin: -2rem -2rem 1.5rem -2rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-reverse {
+        direction: ltr;
     }
 
     .card {
