@@ -212,12 +212,30 @@
                 padding: 1.5rem;
             }
 
+            #close-sidebar {
+                display: block !important;
+                cursor: pointer;
+            }
+
+            #mobile-menu-trigger {
+                display: none !important;
+            }
+
             .user-info {
                 display: none;
             }
 
             .progress-grid {
                 grid-template-columns: 1fr !important;
+            }
+
+            #book {
+                text-align: center;
+            }
+
+            #book .dash-form {
+                margin: 0 auto;
+                text-align: left;
             }
         }
 
@@ -422,6 +440,11 @@
                         0 0 32px rgba(217, 119, 6, 0.55);
         }
 
+        .video-thumb:hover .play-btn [data-lucide],
+        .video-thumb:hover .play-btn svg.lucide {
+            color: white !important;
+        }
+
 
         /* NO SCROLL OVERFLOW */
         * {
@@ -446,7 +469,7 @@
                 <a href="index.html" class="logo-brand">
                     <i data-lucide="dog"></i> Pawsome
                 </a>
-                <button id="close-sidebar" style="display:none; background:none; border:none; color:var(--text);"><i
+                <button id="close-sidebar" style="background:none; border:none; color:var(--text);"><i
                         data-lucide="x"></i></button>
             </div>
             <div class="nav-items">
@@ -706,19 +729,19 @@
                 <div id="homework" class="dash-section">
                     <h2 style="margin-bottom: 2rem;">Homework Tasks</h2>
                     <div style="display: flex; flex-direction: column; gap: 1rem;">
-                        <div class="dash-card" style="display:flex; align-items:center; gap: 1.5rem;">
-                            <input type="checkbox" style="width: 24px; height: 24px; accent-color: var(--primary);">
+                        <div class="dash-card" style="display:flex; align-items:center; gap: 1rem; padding: 1.5rem;">
+                            <input type="checkbox" style="width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0;">
                             <div>
-                                <h4 style="margin-bottom: 0.25rem;">Impulse Control Stays</h4>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">Practice 3 minutes of stay while toys are
+                                <h5 style="margin-bottom: 0.25rem; font-size: 1rem;">Impulse Control Stays</h5>
+                                <p style="font-size: 0.85rem; opacity: 0.7;">Practice 3 minutes of stay while toys are
                                     moved around him.</p>
                             </div>
                         </div>
-                        <div class="dash-card" style="display:flex; align-items:center; gap: 1.5rem;">
-                            <input type="checkbox" style="width: 24px; height: 24px; accent-color: var(--primary);">
+                        <div class="dash-card" style="display:flex; align-items:center; gap: 1rem; padding: 1.5rem;">
+                            <input type="checkbox" style="width: 18px; height: 18px; accent-color: var(--primary); cursor: pointer; flex-shrink: 0;">
                             <div>
-                                <h4 style="margin-bottom: 0.25rem;">Urban Sound Desensitization</h4>
-                                <p style="font-size: 0.9rem; opacity: 0.7;">10 minutes sitting near the park entrance
+                                <h5 style="margin-bottom: 0.25rem; font-size: 1rem;">Urban Sound Desensitization</h5>
+                                <p style="font-size: 0.85rem; opacity: 0.7;">10 minutes sitting near the park entrance
                                     during bike traffic.</p>
                             </div>
                         </div>

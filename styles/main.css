@@ -296,6 +296,12 @@ header.scrolled #mobile-menu-trigger {
     gap: 0.75rem;
 }
 
+.header-actions .btn {
+    height: 44px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 /* 📱 Mobile Menu Styles */
 #mobile-menu-trigger {
     display: none;
@@ -311,7 +317,7 @@ header.scrolled #mobile-menu-trigger {
     color: var(--primary);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1024px) {
     #mobile-menu-trigger {
         display: block;
     }
@@ -327,7 +333,7 @@ header.scrolled #mobile-menu-trigger {
         background: var(--card-bg);
         border-left: 1px solid var(--border);
         flex-direction: column;
-        padding: 6rem 2rem 2rem;
+        padding: 1.5rem 2rem 2rem;
         /* Buffer for close/logo */
         gap: 0.5rem;
         text-align: left;
@@ -442,6 +448,12 @@ footer a:hover {
     color: var(--primary);
 }
 
+footer ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .social-links {
     display: flex;
     gap: 1.5rem;
@@ -465,6 +477,13 @@ footer a:hover {
     color: white;
     transform: translateY(-5px);
     opacity: 1;
+}
+
+.social-links a:hover [data-lucide],
+.social-links a:hover svg.lucide,
+.social-links a [data-lucide]:hover,
+.social-links a svg.lucide:hover {
+    color: white !important;
 }
 
 /* 🃏 CARDS */
@@ -591,6 +610,25 @@ footer a:hover {
     /* Ensure text/icons are white by default in buttons */
 }
 
+.hero-btn {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    min-width: 220px;
+}
+
+.hero-btn-white {
+    background: white !important;
+    color: var(--primary) !important;
+}
+
+@media (max-width: 1024px) {
+    .hero-btn {
+        padding: 0.8rem 1.5rem;
+        min-width: 160px;
+        font-size: 1rem;
+    }
+}
+
 /* Fix for Lucide Icons */
 i[data-lucide],
 svg.lucide {
@@ -652,7 +690,7 @@ svg.lucide-star {
     border: 1px solid var(--border);
     color: var(--text);
     padding: 0.5rem 0.75rem;
-    border-radius: 10px;
+    border-radius: 12px;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -662,7 +700,7 @@ svg.lucide-star {
     justify-content: center;
     gap: 0.5rem;
     transition: var(--transition);
-    height: 40px;
+    height: 44px;
     cursor: pointer;
 }
 
@@ -762,6 +800,10 @@ svg.lucide:hover {
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+.icon-hover-white:hover {
+    color: white !important;
+}
+
 /* --- CARDS & GRID --- */
 .grid-2,
 .grid-3,
@@ -790,10 +832,19 @@ svg.lucide:hover {
     gap: 2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
     .grid-resp-2 {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+}
+
+/* Fix Hero Image Cropping on Mobile */
+@media (max-width: 768px) {
+    .hero-section,
+    section[style*="background-image"] {
+        padding: 6rem 0 !important;
+        background-position: 70% center !important; /* Shift to show more of the subject if needed */
     }
 }
 
@@ -803,6 +854,19 @@ svg.lucide:hover {
 
 .grid-reverse > * {
     direction: ltr;
+}
+
+@media (max-width: 640px) {
+    .grid-2,
+    .grid-3,
+    .grid-resp-2,
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .footer-grid > div {
+        grid-column: span 1 !important;
+    }
 }
 
 @media (max-width: 768px) {
@@ -820,9 +884,28 @@ svg.lucide:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .grid-3 > *:last-child:nth-child(odd) {
+        grid-column: span 2 !important;
+        justify-self: center !important;
+        width: calc(50% - 1rem) !important;
+        margin: 0 auto !important;
+    }
+
     .grid-2,
     .grid-3 {
         gap: 2rem;
+    }
+
+    .hero-section div[style*="display: flex"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 1rem !important;
+    }
+
+    .hero-section .btn {
+        width: 100% !important;
+        max-width: 220px !important;
+        margin: 0 auto;
     }
 }
 
@@ -831,9 +914,7 @@ svg.lucide:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
+
 
     .grid-2,
     .grid-3,
@@ -855,7 +936,10 @@ svg.lucide:hover {
 
     .hero-section .btn {
         width: 100%;
-        margin-bottom: 0.5rem;
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
     }
 }
 
@@ -873,21 +957,7 @@ svg.lucide:hover {
     }
 }
 
-@media (max-width: 580px) {
-    .grid-3 {
-        grid-template-columns: 1fr;
-    }
 
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 1rem;
-    }
-
-    .footer-grid>div:first-child,
-    .footer-grid>div:last-child {
-        grid-column: span 2;
-    }
-}
 
 /* End of animations */
 
@@ -1025,9 +1095,8 @@ svg.lucide:hover {
 /* Responsiveness */
 @media (max-width: 992px) {
 
-    .grid-2,
     .grid-3 {
-        grid-template-columns: 1fr;
+        /* Handled in mobile/tablet queries */
     }
 
     .main-content {
@@ -1090,5 +1159,27 @@ svg.lucide:hover {
         height: 50px;
         bottom: 1.5rem;
         right: 1.5rem;
+    }
+}
+
+/* Service Page Specifics */
+.service-result-img {
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    height: 450px;
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .service-result-img {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-result-img {
+        height: 300px;
     }
 }

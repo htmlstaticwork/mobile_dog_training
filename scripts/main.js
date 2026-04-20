@@ -122,6 +122,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuLinks = document.querySelectorAll('.nav-links a');
     menuLinks.forEach((link, i) => link.style.setProperty('--i', i));
 
+    // Add mobile close button dynamically to nav-links
+    const navLinksContainer = document.querySelector('.nav-links');
+    if (navLinksContainer) {
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'mobile-show mobile-nav-close';
+        closeBtn.style.cssText = 'background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); padding: 0.5rem; display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem; align-self: flex-start;';
+        closeBtn.innerHTML = '<i data-lucide="x"></i>';
+        navLinksContainer.prepend(closeBtn);
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu(false);
+        });
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    }
+
     window.addEventListener('click', (e) => {
         const trigger = e.target.closest('#mobile-menu-trigger');
         const navLinks = document.querySelector('.nav-links');
