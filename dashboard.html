@@ -332,6 +332,12 @@
             display: grid;
             gap: 1.5rem;
             max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        #book {
+            text-align: center;
         }
 
         .dash-input {
@@ -832,8 +838,15 @@
 
             // 📱 Mobile Toggle
             hamburger.addEventListener('click', () => {
-                sidebar.classList.toggle('active');
+                sidebar.classList.add('active');
             });
+
+            const closeSidebar = document.getElementById('close-sidebar');
+            if (closeSidebar) {
+                closeSidebar.addEventListener('click', () => {
+                    sidebar.classList.remove('active');
+                });
+            }
 
             // 🌗 Theme Toggle
             const themeBtn = document.getElementById('theme-toggle');

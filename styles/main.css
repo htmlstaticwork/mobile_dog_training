@@ -604,7 +604,7 @@ footer ul li {
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition);
-    border: none;
+    border: 1.5px solid transparent;
     gap: 0.5rem;
     color: white;
     /* Ensure text/icons are white by default in buttons */
@@ -626,6 +626,7 @@ footer ul li {
         padding: 0.8rem 1.5rem;
         min-width: 160px;
         font-size: 1rem;
+        white-space: nowrap;
     }
 }
 
@@ -675,7 +676,7 @@ svg.lucide-star {
 
 [data-theme="dark"] .btn-secondary {
     background: rgba(255, 255, 255, 0.08);
-    border: 1.5px solid var(--border);
+    border-color: var(--border);
     color: white;
 }
 
@@ -727,6 +728,17 @@ svg.lucide-star {
     color: white !important;
     border-color: var(--primary) !important;
     transform: scale(1.08);
+}
+
+#theme-toggle:hover i,
+#rtl-toggle:hover i,
+#theme-toggle-mob:hover i,
+#rtl-toggle-mob:hover i,
+#theme-toggle:hover span,
+#rtl-toggle:hover span,
+#theme-toggle-mob:hover span,
+#rtl-toggle-mob:hover span {
+    color: white !important;
 }
 
 /* --- SECTIONS --- */
@@ -872,6 +884,12 @@ svg.lucide:hover {
     .card-img-wrapper {
         width: calc(100% + 4rem) !important;
         margin: -2rem -2rem 1.5rem -2rem !important;
+    }
+
+    .testimonial-card-header {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
     }
 }
 
