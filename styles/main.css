@@ -637,6 +637,8 @@ svg.lucide {
     height: 20px;
     stroke-width: 2.5px;
     display: inline-block;
+    stroke: currentColor;
+    fill: none;
 }
 
 svg.lucide-star {
@@ -731,9 +733,13 @@ svg.lucide-star {
 }
 
 #theme-toggle:hover i,
+#theme-toggle:hover svg,
 #rtl-toggle:hover i,
+#rtl-toggle:hover svg,
 #theme-toggle-mob:hover i,
+#theme-toggle-mob:hover svg,
 #rtl-toggle-mob:hover i,
+#rtl-toggle-mob:hover svg,
 #theme-toggle:hover span,
 #rtl-toggle:hover span,
 #theme-toggle-mob:hover span,
